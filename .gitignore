@@ -5,6 +5,7 @@ node_modules/
 out/
 dist/
 coverage/
+*.tsbuildinfo
 
 # Local environment secrets
 .env
@@ -15,6 +16,8 @@ coverage/
 *.log
 .DS_Store
 .vercel/
+.supabase/
+supabase/.temp/
 
 # Local database and generated files
 *.dump

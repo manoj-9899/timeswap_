@@ -1,5 +1,5 @@
 # TimeSwap Supabase Configuration File
-# Project ID: timeswap-core
+project_id = "mkbouvsozmzimheysuaz"
 
 [api]
 enabled = true

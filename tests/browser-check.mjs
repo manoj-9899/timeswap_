@@ -55,6 +55,7 @@ async function runBrowserAudit() {
     { name: 'Sign In', path: '/auth/signin' },
     { name: 'Sign Up', path: '/auth/signup' },
     { name: 'Onboarding Wizard', path: '/onboarding' },
+    { name: 'Offline Fallback', path: '/offline' },
   ];
 
   let passedRoutes = 0;

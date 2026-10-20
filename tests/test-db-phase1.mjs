@@ -85,7 +85,7 @@ async function run() {
     const migrationFiles = [
       '20261020000001_initial_schema.sql',
       '20261020000002_rls_policies.sql',
-      '20261020000003_auth_trigger_welcome_credits.sql',
+      '20261020000003_auth_welcome_credits_trigger.sql',
     ];
 
     for (const file of migrationFiles) {

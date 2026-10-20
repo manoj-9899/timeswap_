@@ -13,8 +13,10 @@
     "test:phase3": "node tests/test-phase3.mjs",
     "test:phase4": "node tests/test-phase4.mjs",
     "test:phase5a": "node tests/test-phase5a.mjs",
+    "test:maintenance": "node tests/test-scheduled-maintenance.mjs",
+    "test:pwa": "node tests/test-pwa.mjs",
     "test:browser": "node tests/browser-check.mjs",
-    "test": "node tests/test-db-phase1.mjs && node tests/test-phase2.mjs && node tests/test-phase3.mjs && node tests/test-phase4.mjs && node tests/test-phase5a.mjs"
+    "test": "node tests/test-db-phase1.mjs && node tests/test-phase2.mjs && node tests/test-phase3.mjs && node tests/test-phase4.mjs && node tests/test-phase5a.mjs && node tests/test-scheduled-maintenance.mjs && node tests/test-pwa.mjs"
   },
   "keywords": [],
   "author": "",

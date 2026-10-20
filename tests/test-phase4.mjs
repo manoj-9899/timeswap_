@@ -93,10 +93,10 @@ async function run() {
     const migrations = [
       'supabase/migrations/20261020000001_initial_schema.sql',
       'supabase/migrations/20261020000002_rls_policies.sql',
-      'supabase/migrations/20261020000003_auth_trigger_welcome_credits.sql',
-      'supabase/migrations/20261020000004_phase2_profiles_and_onboarding.sql',
-      'supabase/migrations/20261020000005_phase3_session_booking_and_escrow.sql',
-      'supabase/migrations/20261020000006_phase4_realtime_messaging_notifications.sql',
+      'supabase/migrations/20261020000003_auth_welcome_credits_trigger.sql',
+      'supabase/migrations/20261020000004_profiles_and_onboarding.sql',
+      'supabase/migrations/20261020000005_session_booking_and_credit_escrow.sql',
+      'supabase/migrations/20261020000006_realtime_messaging_and_notifications.sql',
     ];
 
     for (const mig of migrations) {
