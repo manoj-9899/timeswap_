@@ -1,0 +1,21 @@
+
+# Dependencies and build output
+node_modules/
+.next/
+out/
+dist/
+coverage/
+
+# Local environment secrets
+.env
+.env.*
+!.env.example
+
+# Logs and local tooling
+*.log
+.DS_Store
+.vercel/
+
+# Local database and generated files
+*.dump
+*.sql.gz

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "awwwards": {
+      "source": "juliobsz/skills",
+      "sourceType": "github",
+      "skillPath": "awwwards/SKILL.md",
+      "computedHash": "38f1182e4e70c945e0498287a2e027ce1aa65c931234a47274bd758ab5452e14"
+    },
+    "jury": {
+      "source": "juliobsz/skills",
+      "sourceType": "github",
+      "skillPath": "jury/SKILL.md",
+      "computedHash": "1c84752abb7a515b9ba42ffb1430bb115136dc5098dc4ba0ba8d2eaddbce6fe5"
+    }
+  }
+}

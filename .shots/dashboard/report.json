@@ -1,0 +1,279 @@
+{
+  "url": "http://127.0.0.1:4400/dashboard",
+  "errors": [],
+  "failed": [
+    "[desktop] http://127.0.0.1:4400/sessions/sess-2/complete?_rsc=1538b net::ERR_ABORTED",
+    "[desktop] http://127.0.0.1:4400/sessions/sess-1/complete?_rsc=1538b net::ERR_ABORTED",
+    "[desktop] http://127.0.0.1:4400/members/m1?_rsc=1538b net::ERR_ABORTED",
+    "[desktop] http://127.0.0.1:4400/members/m2?_rsc=1538b net::ERR_ABORTED",
+    "[desktop] http://127.0.0.1:4400/members/m9?_rsc=1fyiw net::ERR_ABORTED",
+    "[keyboard] http://127.0.0.1:4400/sessions/sess-2/complete?_rsc=1538b net::ERR_ABORTED",
+    "[keyboard] http://127.0.0.1:4400/sessions/sess-1/complete?_rsc=1538b net::ERR_ABORTED",
+    "[keyboard] http://127.0.0.1:4400/members/m1?_rsc=1538b net::ERR_ABORTED",
+    "[keyboard] http://127.0.0.1:4400/members/m2?_rsc=1538b net::ERR_ABORTED",
+    "[hover] http://127.0.0.1:4400/sessions/sess-2/complete?_rsc=1538b net::ERR_ABORTED",
+    "[hover] http://127.0.0.1:4400/sessions/sess-1/complete?_rsc=1538b net::ERR_ABORTED",
+    "[hover] http://127.0.0.1:4400/members/m1?_rsc=1538b net::ERR_ABORTED",
+    "[hover] http://127.0.0.1:4400/members/m2?_rsc=1538b net::ERR_ABORTED",
+    "[reduced] http://127.0.0.1:4400/sessions/sess-2/complete?_rsc=1538b net::ERR_ABORTED",
+    "[reduced] http://127.0.0.1:4400/sessions/sess-1/complete?_rsc=1538b net::ERR_ABORTED",
+    "[reduced] http://127.0.0.1:4400/members/m1?_rsc=1538b net::ERR_ABORTED",
+    "[reduced] http://127.0.0.1:4400/members/m2?_rsc=1538b net::ERR_ABORTED",
+    "[reduced] http://127.0.0.1:4400/members/m3?_rsc=1538b net::ERR_ABORTED"
+  ],
+  "desktop": {
+    "loadMs": 1124,
+    "loaderMs": null,
+    "settledMs": 3281,
+    "vitals": {
+      "lcpMs": 100,
+      "lcpElement": "h1.text-3xl",
+      "cls": 0
+    },
+    "height": 1986,
+    "overflowX": false,
+    "offenders": [],
+    "h1": [
+      "Welcome back, Ana"
+    ],
+    "smallTargets": [
+      "Skip to main content 1x1",
+      "View all (4) 82x16",
+      "Open Messenger 101x16",
+      "Explore All 63x16",
+      "Full Ledger 67x16",
+      "Discover Mentors 115x19",
+      "Design & Typography 141x19",
+      "Code & Systems 106x19"
+    ],
+    "glHidden": [],
+    "title": "TimeSwap: Peer-to-Peer Skill Learning & Reciprocal Time Credits",
+    "glOn": false,
+    "scrollFps": {
+      "fps": 60,
+      "worstFrameMs": 17
+    },
+    "nav": {
+      "href": "/discover",
+      "scrollYAfter": 0,
+      "title": "TimeSwap: Peer-to-Peer Skill Learning & Reciprocal Time Credits"
+    },
+    "idleMotion": false,
+    "idleAt": null
+  },
+  "mobile": {
+    "throttled": true,
+    "loadMs": 1713,
+    "loaderMs": null,
+    "settledMs": 3697,
+    "vitals": {
+      "lcpMs": 476,
+      "lcpElement": "p.text-sm",
+      "cls": 0
+    },
+    "height": 4314,
+    "overflowX": false,
+    "offenders": [],
+    "h1": [
+      "Welcome back, Ana"
+    ],
+    "smallTargets": [
+      "Skip to main content 1x1",
+      "View all (4) 82x16",
+      "Open Messenger 101x16",
+      "Explore All 63x16",
+      "Full Ledger 67x16",
+      "Discover Mentors 115x19",
+      "Design & Typography 141x19",
+      "Code & Systems 106x19"
+    ],
+    "glHidden": [],
+    "title": "TimeSwap: Peer-to-Peer Skill Learning & Reciprocal Time Credits",
+    "glOn": false,
+    "scrollFps": {
+      "fps": 60,
+      "worstFrameMs": 17
+    }
+  },
+  "files": [
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-00-firstpaint.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-01-hero.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-02-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-03-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-04-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-05-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-06-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-07-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-90-transition-a.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-90-transition-b.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-90-transition-c.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-91-after-nav.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/d-92-back.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/k-01-focus.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/k-02-focus.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/k-03-focus.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/k-04-focus.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-01-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-01-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-02-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-02-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-03-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-03-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-04-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-04-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-05-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-05-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-06-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-06-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-07-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-07-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-08-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/h-08-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/m-01-hero.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/m-02-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/m-03-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/m-04-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/m-05-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/m-06-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/r-01-hero.png",
+    "/home/manoj/Developer/timeswap_/.shots/dashboard/r-02-mid.png"
+  ],
+  "notes": [
+    "desktop FPS runs headless on a software GPU: treat it as a floor, not a measurement of real hardware",
+    "mobile runs at 4x CPU slowdown on slow 4G: mobile.vitals and mobile.scrollFps are the numbers that count",
+    "loadMs: ms from navigation to the load event, null if it had not fired after 30 s (desktop) or 60 s (phone); a heavy page takes long, while visitors see content at vitals.lcpMs. loaderMs: ms until the #loader ended, null when the page has none",
+    "settledMs: ms from navigation by which the first screen stopped changing, never before the fixed wait. null: still changing at the cap, either a long intro or continuous motion (a live shader, video); d-01-hero / m-01-hero tell which. reduced.moving: the screen was still changing 1.5 s after load with reduced motion on"
+  ],
+  "keyboard": {
+    "stops": [
+      "a \"Skip to main content\"",
+      "a \"TimeSwap KNOWLEDGE LEDGER\"",
+      "a \"Dashboard\"",
+      "a \"Discover\"",
+      "a \"My Sessions\"",
+      "a \"Wallet\"",
+      "a \"Messages\"",
+      "a \"3.5 credits\"",
+      "button \"View notifications\"",
+      "button \"User account menu\"",
+      "a \"Discover Skills\"",
+      "button \"Discover Skills\""
+    ],
+    "skipLinkFirst": true,
+    "noVisibleFocus": [],
+    "invisibleFocus": [],
+    "stuck": false
+  },
+  "hover": {
+    "targets": [
+      {
+        "shot": "h-01",
+        "label": "button \"View notifications\"",
+        "interactive": true,
+        "primary": true,
+        "react": "color",
+        "changed": [
+          "color",
+          "backgroundColor",
+          "borderColor",
+          "textDecorationColor"
+        ]
+      },
+      {
+        "shot": "h-02",
+        "label": "button \"User account menu\"",
+        "interactive": true,
+        "primary": true,
+        "react": "color",
+        "changed": [
+          "backgroundColor",
+          "borderColor"
+        ]
+      },
+      {
+        "shot": "h-03",
+        "label": "button \"Discover Skills\"",
+        "interactive": true,
+        "primary": true,
+        "react": "moves",
+        "changed": [
+          "backgroundColor",
+          "boxShadow"
+        ]
+      },
+      {
+        "shot": "h-04",
+        "label": "button \"Offer a New Skill\"",
+        "interactive": true,
+        "primary": true,
+        "react": "color",
+        "changed": [
+          "backgroundColor",
+          "borderColor"
+        ]
+      },
+      {
+        "shot": "h-05",
+        "label": "button \"Review & Release Credit\"",
+        "interactive": true,
+        "primary": true,
+        "react": "moves",
+        "changed": [
+          "backgroundColor",
+          "boxShadow"
+        ]
+      },
+      {
+        "shot": "h-06",
+        "label": "button \"Sign-off\"",
+        "interactive": true,
+        "primary": true,
+        "react": "color",
+        "changed": [
+          "backgroundColor",
+          "borderColor"
+        ]
+      },
+      {
+        "shot": "h-07",
+        "label": "button \"Accept Request\"",
+        "interactive": true,
+        "primary": true,
+        "react": "moves",
+        "changed": [
+          "backgroundColor",
+          "boxShadow"
+        ]
+      },
+      {
+        "shot": "h-08",
+        "label": "button \"Request\"",
+        "interactive": true,
+        "primary": true,
+        "react": "color",
+        "changed": [
+          "backgroundColor"
+        ]
+      }
+    ],
+    "noHoverChange": [],
+    "colorOnly": [
+      "h-01 button \"View notifications\"",
+      "h-02 button \"User account menu\"",
+      "h-04 button \"Offer a New Skill\"",
+      "h-06 button \"Sign-off\"",
+      "h-08 button \"Request\""
+    ],
+    "covered": [],
+    "cursorFollower": false
+  },
+  "reduced": {
+    "hiddenText": 0,
+    "moving": false
+  },
+  "a11y": {
+    "violations": [],
+    "serious": 0,
+    "contrastNeedsReview": 1
+  }
+}

@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-editorial: 'Cormorant Garamond', 'Newsreader', Georgia, serif;
+  --canvas: #FAF9F6;
+  --surface: #FFFFFF;
+  --surface-subtle: #F1F3EC;
+  --surface-hover: #F6F7F2;
+  --ink: #242922;
+  --ink-muted: #52594F;
+  --line: #E6E7DF;
+  --brand: #347A5C;
+  --brand-deep: #255640;
+  --brand-soft: #E4F0E6;
+  --accent-peach: #F5E2D4;
+  --accent-yellow: #F2E7BE;
+  --error: #B84242;
+}
+
+/* Light-only baseline */
+html {
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--ink);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: #E4F0E6;
+  color: #255640;
+}
+
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid #347A5C;
+  outline-offset: 2px;
+}
+
+/* Fluid responsive type helpers */
+.display-hero {
+  font-family: var(--font-editorial), Georgia, serif;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.display-title {
+  font-family: var(--font-editorial), Georgia, serif;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+/* Kinetic equilibrium micro-animations */
+@keyframes dialFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0.5deg);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
+.animate-dial-float {
+  animation: dialFloat 6s ease-in-out infinite;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+/* Reduced motion overrides */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8DDD4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B9C2B4;
+}

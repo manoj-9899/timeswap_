@@ -1,0 +1,242 @@
+{
+  "url": "http://127.0.0.1:4400/",
+  "errors": [],
+  "failed": [
+    "[desktop] http://127.0.0.1:4400/members/m1?_rsc=1wtp7 net::ERR_ABORTED",
+    "[desktop] http://127.0.0.1:4400/members/m2?_rsc=1wtp7 net::ERR_ABORTED",
+    "[desktop] http://127.0.0.1:4400/members/m3?_rsc=1wtp7 net::ERR_ABORTED",
+    "[desktop] http://127.0.0.1:4400/members/m4?_rsc=1wtp7 net::ERR_ABORTED",
+    "[desktop] http://127.0.0.1:4400/members/m5?_rsc=1wtp7 net::ERR_ABORTED",
+    "[hover] http://127.0.0.1:4400/members/m1?_rsc=1wtp7 net::ERR_ABORTED",
+    "[hover] http://127.0.0.1:4400/members/m2?_rsc=1wtp7 net::ERR_ABORTED",
+    "[hover] http://127.0.0.1:4400/members/m3?_rsc=1wtp7 net::ERR_ABORTED",
+    "[hover] http://127.0.0.1:4400/members/m4?_rsc=1wtp7 net::ERR_ABORTED",
+    "[hover] http://127.0.0.1:4400/members/m5?_rsc=1wtp7 net::ERR_ABORTED",
+    "[reduced] http://127.0.0.1:4400/members/m4?_rsc=1wtp7 net::ERR_ABORTED"
+  ],
+  "desktop": {
+    "loadMs": 529,
+    "loaderMs": null,
+    "settledMs": 2745,
+    "vitals": {
+      "lcpMs": 108,
+      "lcpElement": "h1.text-4xl",
+      "cls": 0
+    },
+    "height": 5920,
+    "overflowX": false,
+    "offenders": [],
+    "h1": [
+      "Your time is worth more when you share it."
+    ],
+    "smallTargets": [
+      "Skip to main content 1x1"
+    ],
+    "glHidden": [],
+    "title": "TimeSwap: Peer-to-Peer Skill Learning & Reciprocal Time Credits",
+    "glOn": false,
+    "scrollFps": {
+      "fps": 61,
+      "worstFrameMs": 17
+    },
+    "idleMotion": false,
+    "idleAt": null
+  },
+  "mobile": {
+    "throttled": true,
+    "loadMs": 1837,
+    "loaderMs": null,
+    "settledMs": 3874,
+    "vitals": {
+      "lcpMs": 576,
+      "lcpElement": "p.text-lg",
+      "cls": 0
+    },
+    "height": 11109,
+    "overflowX": false,
+    "offenders": [],
+    "h1": [
+      "Your time is worth more when you share it."
+    ],
+    "smallTargets": [
+      "Skip to main content 1x1"
+    ],
+    "glHidden": [],
+    "title": "TimeSwap: Peer-to-Peer Skill Learning & Reciprocal Time Credits",
+    "glOn": false,
+    "scrollFps": {
+      "fps": 60,
+      "worstFrameMs": 17
+    }
+  },
+  "files": [
+    "/home/manoj/Developer/timeswap_/.shots/d-00-firstpaint.png",
+    "/home/manoj/Developer/timeswap_/.shots/d-01-hero.png",
+    "/home/manoj/Developer/timeswap_/.shots/d-02-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/d-03-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/d-04-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/d-05-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/d-06-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/d-07-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/k-01-focus.png",
+    "/home/manoj/Developer/timeswap_/.shots/k-02-focus.png",
+    "/home/manoj/Developer/timeswap_/.shots/k-03-focus.png",
+    "/home/manoj/Developer/timeswap_/.shots/k-04-focus.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-01-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-01-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-02-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-02-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-03-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-03-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-04-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-04-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-05-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-05-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-06-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-06-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-07-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-07-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-08-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/h-08-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/m-01-hero.png",
+    "/home/manoj/Developer/timeswap_/.shots/m-02-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/m-03-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/m-04-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/m-05-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/m-06-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/r-01-hero.png",
+    "/home/manoj/Developer/timeswap_/.shots/r-02-mid.png"
+  ],
+  "notes": [
+    "desktop FPS runs headless on a software GPU: treat it as a floor, not a measurement of real hardware",
+    "mobile runs at 4x CPU slowdown on slow 4G: mobile.vitals and mobile.scrollFps are the numbers that count",
+    "loadMs: ms from navigation to the load event, null if it had not fired after 30 s (desktop) or 60 s (phone); a heavy page takes long, while visitors see content at vitals.lcpMs. loaderMs: ms until the #loader ended, null when the page has none",
+    "settledMs: ms from navigation by which the first screen stopped changing, never before the fixed wait. null: still changing at the cap, either a long intro or continuous motion (a live shader, video); d-01-hero / m-01-hero tell which. reduced.moving: the screen was still changing 1.5 s after load with reduced motion on"
+  ],
+  "keyboard": {
+    "stops": [
+      "a \"Skip to main content\"",
+      "a \"TimeSwap KNOWLEDGE LEDGER\"",
+      "a \"How It Works\"",
+      "a \"Explore Skills\"",
+      "a \"Community\"",
+      "a \"Principles\"",
+      "a \"FAQ\"",
+      "a \"Sign In\"",
+      "a \"Start Swapping\"",
+      "a \"Start Swapping Free\"",
+      "a \"Explore 120+ Skills\"",
+      "button \"30m\""
+    ],
+    "skipLinkFirst": true,
+    "noVisibleFocus": [],
+    "invisibleFocus": [],
+    "stuck": false
+  },
+  "hover": {
+    "targets": [
+      {
+        "shot": "h-01",
+        "label": "button \"30 m\"",
+        "interactive": true,
+        "primary": true,
+        "react": "color",
+        "changed": [
+          "color",
+          "textDecorationColor"
+        ]
+      },
+      {
+        "shot": "h-02",
+        "label": "button \"60 m\"",
+        "interactive": true,
+        "primary": true,
+        "react": "none",
+        "changed": []
+      },
+      {
+        "shot": "h-03",
+        "label": "button \"Simulate 2-Way Completion\"",
+        "interactive": true,
+        "primary": true,
+        "react": "moves",
+        "changed": [
+          "backgroundColor",
+          "boxShadow"
+        ]
+      },
+      {
+        "shot": "h-04",
+        "label": "button \"All\"",
+        "interactive": true,
+        "primary": true,
+        "react": "none",
+        "changed": []
+      },
+      {
+        "shot": "h-05",
+        "label": "button \"Design & Creative\"",
+        "interactive": true,
+        "primary": true,
+        "react": "color",
+        "changed": [
+          "color",
+          "borderColor",
+          "textDecorationColor"
+        ]
+      },
+      {
+        "shot": "h-06",
+        "label": "button \"Do I have to trade skills directly with \"",
+        "interactive": true,
+        "primary": true,
+        "react": "color",
+        "changed": [
+          "color",
+          "textDecorationColor"
+        ]
+      },
+      {
+        "shot": "h-07",
+        "label": "a \"Start Swapping Free\"",
+        "interactive": true,
+        "primary": true,
+        "react": "none",
+        "changed": []
+      },
+      {
+        "shot": "h-08",
+        "label": "a \"Explore 120+ Skills\"",
+        "interactive": true,
+        "primary": true,
+        "react": "color",
+        "changed": [
+          "backgroundColor",
+          "borderColor"
+        ]
+      }
+    ],
+    "noHoverChange": [
+      "h-02 button \"60 m\"",
+      "h-04 button \"All\"",
+      "h-07 a \"Start Swapping Free\""
+    ],
+    "colorOnly": [
+      "h-01 button \"30 m\"",
+      "h-05 button \"Design & Creative\"",
+      "h-06 button \"Do I have to trade skills directly with \"",
+      "h-08 a \"Explore 120+ Skills\""
+    ],
+    "covered": [],
+    "cursorFollower": false
+  },
+  "reduced": {
+    "hiddenText": 0,
+    "moving": false
+  },
+  "a11y": {
+    "violations": [],
+    "serious": 0,
+    "contrastNeedsReview": 23
+  }
+}

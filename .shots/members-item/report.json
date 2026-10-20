@@ -1,0 +1,252 @@
+{
+  "url": "http://127.0.0.1:4400/members/m1",
+  "errors": [
+    "[hover] Failed to load resource: the server responded with a status of 400 (Bad Request)",
+    "[hover] Failed to load resource: the server responded with a status of 400 (Bad Request)"
+  ],
+  "failed": [
+    "[desktop] http://127.0.0.1:4400/sessions/sess-2/complete?_rsc=1538b net::ERR_ABORTED",
+    "[desktop] http://127.0.0.1:4400/sessions/sess-1/complete?_rsc=1538b net::ERR_ABORTED",
+    "[desktop] http://127.0.0.1:4400/members/m2?_rsc=1538b net::ERR_ABORTED",
+    "[hover] 400 http://127.0.0.1:4400/_next/static/css/aa30646592adff6c.css",
+    "[hover] http://127.0.0.1:4400/_next/static/css/aa30646592adff6c.css net::ERR_ABORTED",
+    "[hover] 400 http://127.0.0.1:4400/_next/static/chunks/app/members/%5Bid%5D/page-2d6b1edf6d53d3d7.js",
+    "[hover] http://127.0.0.1:4400/_next/static/chunks/app/members/%5Bid%5D/page-2d6b1edf6d53d3d7.js net::ERR_ABORTED"
+  ],
+  "desktop": {
+    "loadMs": 549,
+    "loaderMs": null,
+    "settledMs": 2697,
+    "vitals": {
+      "lcpMs": 68,
+      "lcpElement": "p.text-sm",
+      "cls": 0
+    },
+    "height": 1771,
+    "overflowX": false,
+    "offenders": [],
+    "h1": [
+      "Elena Rostova"
+    ],
+    "smallTargets": [
+      "Back to Discover 119x16",
+      "Discover Mentors 115x19",
+      "Design & Typography 141x19",
+      "Code & Systems 106x19",
+      "Crafts & Ceramics 117x19",
+      "Languages & Letters 135x19",
+      "Member Dashboard 132x19",
+      "Active Exchanges 113x19"
+    ],
+    "glHidden": [],
+    "title": "TimeSwap: Peer-to-Peer Skill Learning & Reciprocal Time Credits",
+    "glOn": false,
+    "scrollFps": {
+      "fps": 60,
+      "worstFrameMs": 33
+    },
+    "nav": {
+      "href": "/dashboard",
+      "scrollYAfter": 0,
+      "title": "TimeSwap: Peer-to-Peer Skill Learning & Reciprocal Time Credits"
+    },
+    "idleMotion": false,
+    "idleAt": null
+  },
+  "mobile": {
+    "throttled": true,
+    "loadMs": 1294,
+    "loaderMs": null,
+    "settledMs": 3276,
+    "vitals": {
+      "lcpMs": 516,
+      "lcpElement": "p.text-sm",
+      "cls": 0
+    },
+    "height": 3566,
+    "overflowX": false,
+    "offenders": [],
+    "h1": [
+      "Elena Rostova"
+    ],
+    "smallTargets": [
+      "Skip to main content 1x1",
+      "Back to Discover 119x16",
+      "Discover Mentors 115x19",
+      "Design & Typography 141x19",
+      "Code & Systems 106x19",
+      "Crafts & Ceramics 117x19",
+      "Languages & Letters 135x19",
+      "Member Dashboard 132x19"
+    ],
+    "glHidden": [],
+    "title": "TimeSwap: Peer-to-Peer Skill Learning & Reciprocal Time Credits",
+    "glOn": false,
+    "scrollFps": {
+      "fps": 61,
+      "worstFrameMs": 17
+    }
+  },
+  "files": [
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-00-firstpaint.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-01-hero.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-02-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-03-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-04-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-05-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-06-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-07-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-90-transition-a.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-90-transition-b.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-90-transition-c.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-91-after-nav.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/d-92-back.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/k-01-focus.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/k-02-focus.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/k-03-focus.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/k-04-focus.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-01-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-01-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-02-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-02-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-03-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-03-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-04-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-04-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-05-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-05-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-06-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-06-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-07-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-07-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-08-rest.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/h-08-hover.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/m-01-hero.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/m-02-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/m-03-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/m-04-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/m-05-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/m-06-scroll.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/r-01-hero.png",
+    "/home/manoj/Developer/timeswap_/.shots/members-item/r-02-mid.png"
+  ],
+  "notes": [
+    "desktop FPS runs headless on a software GPU: treat it as a floor, not a measurement of real hardware",
+    "mobile runs at 4x CPU slowdown on slow 4G: mobile.vitals and mobile.scrollFps are the numbers that count",
+    "loadMs: ms from navigation to the load event, null if it had not fired after 30 s (desktop) or 60 s (phone); a heavy page takes long, while visitors see content at vitals.lcpMs. loaderMs: ms until the #loader ended, null when the page has none",
+    "settledMs: ms from navigation by which the first screen stopped changing, never before the fixed wait. null: still changing at the cap, either a long intro or continuous motion (a live shader, video); d-01-hero / m-01-hero tell which. reduced.moving: the screen was still changing 1.5 s after load with reduced motion on"
+  ],
+  "keyboard": {
+    "stops": [
+      "a \"TimeSwap KNOWLEDGE LEDGER\"",
+      "a \"Dashboard\"",
+      "a \"Discover\"",
+      "a \"My Sessions\"",
+      "a \"Wallet\"",
+      "a \"Messages\"",
+      "a \"3.5 credits\"",
+      "button \"View notifications\"",
+      "button \"User account menu\"",
+      "a \"Back to Discover\"",
+      "button \"Remove Elena Rostova from bookmarks\"",
+      "button \"Message\""
+    ],
+    "skipLinkFirst": false,
+    "noVisibleFocus": [],
+    "invisibleFocus": [],
+    "stuck": false
+  },
+  "hover": {
+    "targets": [
+      {
+        "shot": "h-01",
+        "label": "button \"View notifications\"",
+        "interactive": true,
+        "primary": true,
+        "react": "pixels",
+        "changed": []
+      },
+      {
+        "shot": "h-02",
+        "label": "button \"User account menu\"",
+        "interactive": true,
+        "primary": true,
+        "react": "pixels",
+        "changed": []
+      },
+      {
+        "shot": "h-03",
+        "label": "button \"Toggle navigation menu\"",
+        "interactive": true,
+        "primary": true,
+        "react": "pixels",
+        "changed": []
+      },
+      {
+        "shot": "h-04",
+        "label": "button \"Remove Elena Rostova from bookmarks\"",
+        "interactive": true,
+        "primary": true,
+        "react": "pixels",
+        "changed": []
+      },
+      {
+        "shot": "h-05",
+        "label": "button \"Message\"",
+        "interactive": true,
+        "primary": true,
+        "react": "pixels",
+        "changed": []
+      },
+      {
+        "shot": "h-06",
+        "label": "button \"Request Exchange\"",
+        "interactive": true,
+        "primary": true,
+        "react": "pixels",
+        "changed": []
+      },
+      {
+        "shot": "h-07",
+        "label": "button \"Book This Skill\"",
+        "interactive": true,
+        "primary": true,
+        "react": "pixels",
+        "changed": []
+      },
+      {
+        "shot": "h-08",
+        "label": "a \"Back to Discover\"",
+        "interactive": true,
+        "primary": true,
+        "react": "none",
+        "changed": []
+      }
+    ],
+    "noHoverChange": [
+      "h-08 a \"Back to Discover\""
+    ],
+    "colorOnly": [],
+    "covered": [],
+    "cursorFollower": false
+  },
+  "reduced": {
+    "hiddenText": 0,
+    "moving": false
+  },
+  "a11y": {
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "count": 1,
+        "nodes": [
+          ".opacity-60 (#719482 on #e4f0e6, 2.86:1, needs 4.5:1)"
+        ]
+      }
+    ],
+    "serious": 1,
+    "contrastNeedsReview": 0
+  }
+}
