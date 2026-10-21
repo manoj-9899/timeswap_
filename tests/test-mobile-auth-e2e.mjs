@@ -164,7 +164,7 @@ async function runMobileAuthE2ETests() {
     await passwordInput.fill('WrongPassword123!');
     const signinSubmit = page.locator('button:has-text("Sign In to TimeSwap")');
     await signinSubmit.click();
-    await page.waitForTimeout(1000);
+    await page.waitForSelector('.text-status-error', { timeout: 4000 }).catch(() => null);
 
     const signinError = page.locator('.text-status-error');
     assert(await signinError.count() > 0, 'Live signin displays status-error banner on invalid credentials');

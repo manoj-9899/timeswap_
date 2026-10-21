@@ -140,25 +140,27 @@ export default function DiscoverPage() {
       {/* Categories & Filter Bar */}
       <div className="space-y-3 sm:space-y-4">
         {/* Horizontal Category Chips */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 -mx-3 px-3 sm:mx-0 sm:px-0 no-scrollbar">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all select-none touch-target ${
-                selectedCategory === cat
-                  ? 'bg-brand text-white shadow-subtle'
-                  : 'bg-surface border border-line text-ink-muted hover:text-ink hover:bg-surface-subtle'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="-mx-3 sm:mx-0 overflow-x-auto no-scrollbar scroll-smooth overscroll-x-contain touch-pan-x pb-2">
+          <div className="flex items-center gap-2 px-3 sm:px-0 w-max">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`flex-shrink-0 shrink-0 px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all select-none touch-target ${
+                  selectedCategory === cat
+                    ? 'bg-brand text-white shadow-subtle'
+                    : 'bg-surface border border-line text-ink-muted hover:text-ink hover:bg-surface-subtle'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Secondary Filter Controls */}
-        <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
-          <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 pt-1">
+          <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-3 w-full sm:w-auto">
             <span className="text-xs text-ink-muted font-medium">
               Showing <strong className="text-ink">{filteredMembers.length}</strong> mentors
             </span>
@@ -166,22 +168,22 @@ export default function DiscoverPage() {
             {isFiltered && (
               <button
                 onClick={clearAllFilters}
-                className="text-xs font-semibold text-brand hover:underline flex items-center gap-1"
+                className="text-xs font-semibold text-brand hover:underline flex items-center gap-1 shrink-0"
               >
                 <X className="w-3.5 h-3.5" /> Clear Filters
               </button>
             )}
           </div>
 
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto">
             {/* Proficiency Filter */}
-            <div className="flex items-center gap-1.5 sm:gap-2 text-xs">
-              <span className="text-ink-muted hidden sm:inline">Proficiency:</span>
+            <div className="flex-1 sm:flex-initial flex items-center gap-1.5 sm:gap-2 text-xs min-w-0">
+              <span className="text-ink-muted hidden sm:inline shrink-0">Proficiency:</span>
               <select
                 aria-label="Filter mentors by proficiency"
                 value={selectedProficiency}
                 onChange={e => setSelectedProficiency(e.target.value)}
-                className="bg-surface text-ink text-xs font-medium rounded-lg border border-line px-2 sm:px-2.5 py-1.5 focus:border-brand focus:outline-none min-h-[36px]"
+                className="w-full sm:w-auto bg-surface text-ink text-xs font-medium rounded-lg border border-line px-2 sm:px-2.5 py-1.5 focus:border-brand focus:outline-none min-h-[36px]"
               >
                 <option value="All">All Levels</option>
                 <option value="Intermediate">Intermediate</option>
@@ -191,13 +193,13 @@ export default function DiscoverPage() {
             </div>
 
             {/* Sort Select */}
-            <div className="flex items-center gap-1.5 sm:gap-2 text-xs">
-              <span className="text-ink-muted hidden sm:inline">Sort:</span>
+            <div className="flex-1 sm:flex-initial flex items-center gap-1.5 sm:gap-2 text-xs min-w-0">
+              <span className="text-ink-muted hidden sm:inline shrink-0">Sort:</span>
               <select
                 aria-label="Sort mentors by criteria"
                 value={selectedSort}
                 onChange={e => setSelectedSort(e.target.value as any)}
-                className="bg-surface text-ink text-xs font-medium rounded-lg border border-line px-2 sm:px-2.5 py-1.5 focus:border-brand focus:outline-none min-h-[36px]"
+                className="w-full sm:w-auto bg-surface text-ink text-xs font-medium rounded-lg border border-line px-2 sm:px-2.5 py-1.5 focus:border-brand focus:outline-none min-h-[36px]"
               >
                 <option value="rating">Highest Rated</option>
                 <option value="hours">Most Hours</option>
