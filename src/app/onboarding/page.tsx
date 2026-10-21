@@ -319,7 +319,7 @@ export default function OnboardingPage() {
 
               <div className="p-4 bg-surface-subtle rounded-xl border border-line space-y-2">
                 <ShieldCheck className="w-5 h-5 text-brand" />
-                <h2 className="font-bold text-xs text-ink">3.0 Credit Grant</h2>
+                <h2 className="font-bold text-xs text-ink">3 Credit Grant</h2>
                 <p className="text-[11px] text-ink-muted">Awarded automatically upon email verification to fund your first exchanges.</p>
               </div>
             </div>
@@ -612,7 +612,7 @@ export default function OnboardingPage() {
 
             <div className="p-4 bg-brand-soft border border-brand/20 rounded-xl text-xs text-brand-deep flex items-center justify-between">
               <span className="font-semibold">Starting Wallet Balance:</span>
-              <span className="font-extrabold text-sm">3.0 Time Credits Granted</span>
+              <span className="font-extrabold text-sm">3 Time Credits Granted</span>
             </div>
           </div>
         )}

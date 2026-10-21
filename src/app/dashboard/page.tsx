@@ -109,7 +109,7 @@ export default function DashboardPage() {
           </div>
           <div className="flex items-baseline gap-1.5 sm:gap-2">
             <span className="text-2xl sm:text-4xl font-extrabold text-ink font-editorial">
-              {currentUser.availableCredits.toFixed(1)}
+              {currentUser.availableCredits}
             </span>
             <span className="text-[10px] sm:text-xs font-bold text-brand-deep">Credits</span>
           </div>
@@ -131,7 +131,7 @@ export default function DashboardPage() {
             <span className="text-[10px] sm:text-xs font-semibold text-ink-muted">shared</span>
           </div>
           <p className="text-[10px] sm:text-[11px] text-brand-deep font-medium leading-tight line-clamp-2">
-            +{currentUser.lifetimeCreditsEarned.toFixed(1)} credits earned.
+            +{currentUser.lifetimeCreditsEarned} credits earned.
           </p>
         </div>
 
@@ -148,7 +148,7 @@ export default function DashboardPage() {
             <span className="text-[10px] sm:text-xs font-semibold text-ink-muted">absorbed</span>
           </div>
           <p className="text-[10px] sm:text-[11px] text-ink-muted leading-tight line-clamp-2">
-            {currentUser.lifetimeCreditsSpent.toFixed(1)} credits spent.
+            {currentUser.lifetimeCreditsSpent} credits spent.
           </p>
         </div>
 
@@ -160,7 +160,7 @@ export default function DashboardPage() {
           </div>
           <div className="flex items-baseline gap-1.5 sm:gap-2">
             <span className="text-2xl sm:text-4xl font-extrabold text-ink font-editorial">
-              {currentUser.pendingCredits.toFixed(1)}
+              {currentUser.pendingCredits}
             </span>
             <span className="text-[10px] sm:text-xs font-semibold text-ink-muted">Credits</span>
           </div>

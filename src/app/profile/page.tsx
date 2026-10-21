@@ -214,7 +214,7 @@ export default function ProfilePage() {
         <div className="flex items-center justify-between pb-3 border-b border-line">
           <div>
             <h2 className="font-bold text-lg text-ink font-editorial">Skills You Offer to Teach</h2>
-            <p className="text-xs text-ink-muted">Listed at 1.0 credit per 60 minutes.</p>
+            <p className="text-xs text-ink-muted">Listed at 1 credit per 60 minutes.</p>
           </div>
           <Button
             variant="outline"

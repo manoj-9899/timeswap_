@@ -16,8 +16,11 @@
     "test:maintenance": "node tests/test-scheduled-maintenance.mjs",
     "test:pwa": "node tests/test-pwa.mjs",
     "test:auth": "node tests/test-auth-hardening.mjs",
+    "test:hours": "node tests/test-whole-hour-invariants.mjs",
+    "test:footer": "node tests/test-footer-detail.mjs",
+    "test:homepage": "node tests/homepage-audit.mjs",
     "test:browser": "node tests/browser-check.mjs",
-    "test": "node tests/test-db-phase1.mjs && node tests/test-phase2.mjs && node tests/test-phase3.mjs && node tests/test-phase4.mjs && node tests/test-phase5a.mjs && node tests/test-scheduled-maintenance.mjs && node tests/test-pwa.mjs && node tests/test-auth-hardening.mjs"
+    "test": "node tests/test-db-phase1.mjs && node tests/test-phase2.mjs && node tests/test-phase3.mjs && node tests/test-phase4.mjs && node tests/test-phase5a.mjs && node tests/test-scheduled-maintenance.mjs && node tests/test-pwa.mjs && node tests/test-auth-hardening.mjs && node tests/test-whole-hour-invariants.mjs"
   },
   "keywords": [],
   "author": "",

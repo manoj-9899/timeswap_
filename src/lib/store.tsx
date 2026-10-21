@@ -12,6 +12,7 @@ import {
   SkillCategory, 
   SessionDuration 
 } from '../types';
+import { validateAndCalculateCreditCost } from './domain/duration';
 import { 
   INITIAL_MEMBERS, 
   INITIAL_CURRENT_USER, 
@@ -608,7 +609,15 @@ export function TimeSwapProvider({ children }: { children: React.ReactNode }) {
       };
     }
 
-    const cost = data.durationMinutes === 60 ? 1 : data.durationMinutes === 120 ? 2 : 3;
+    const validation = validateAndCalculateCreditCost(data.durationMinutes);
+    if (!validation.valid) {
+      return {
+        success: false,
+        error: validation.error,
+      };
+    }
+
+    const cost = validation.credits;
 
     if (currentUser.availableCredits < cost) {
       return {

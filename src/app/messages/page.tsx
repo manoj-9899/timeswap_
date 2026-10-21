@@ -276,7 +276,7 @@ function MessagesContent() {
                             <div className={`mt-3 p-3 rounded-xl border text-xs ${isMine ? 'bg-white/10 border-white/20 text-white' : 'bg-surface border-line text-ink'}`}>
                               <div className="flex items-center justify-between font-bold pb-2 border-b border-current/20">
                                 <span>{msg.proposalDetails.skill}</span>
-                                <span>{msg.proposalDetails.creditCost} Credit</span>
+                                <span>{msg.proposalDetails.creditCost} {msg.proposalDetails.creditCost === 1 ? 'Credit' : 'Credits'}</span>
                               </div>
                               <div className="pt-2 space-y-1 text-[11px] opacity-90">
                                 <p>Duration: {msg.proposalDetails.duration}</p>

@@ -59,7 +59,7 @@ export default function LandingPage() {
     },
     {
       q: 'How do session durations convert to credits?',
-      a: 'We use a straightforward, predictable conversion: 60 minutes = 1.0 time credit. All new members receive 3 welcome credits to begin learning immediately before offering their first skill.'
+      a: 'We use a straightforward, predictable conversion: 60 minutes = 1 time credit. All new members receive 3 welcome credits to begin learning immediately before offering their first skill.'
     },
     {
       q: 'What if I am a beginner and don’t know what to teach?',
@@ -70,14 +70,14 @@ export default function LandingPage() {
   return (
     <div className="space-y-12 sm:space-y-20 md:space-y-36">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-8 pb-6 sm:pt-20 sm:pb-16 overflow-hidden">
+      <section className="relative pt-6 pb-6 sm:pt-16 sm:pb-16 overflow-hidden">
         {/* Subtle geometric grid background */}
         <div className="absolute inset-0 bg-[radial-gradient(#E6E7DF_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
             {/* Left Narrative Column */}
-            <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-6 text-left">
               {/* Pill Tag */}
               <div className="inline-flex items-center gap-2 bg-brand-soft/80 border border-brand/20 px-3.5 py-1.5 rounded-pill shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-brand animate-pulse-subtle" />
@@ -87,38 +87,38 @@ export default function LandingPage() {
               </div>
 
               {/* Editorial Headline */}
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-ink font-editorial tracking-tight leading-[1.08]">
+              <h1 className="text-[clamp(1.85rem,5.5vw,3.75rem)] font-extrabold text-ink font-editorial tracking-tight leading-[1.12] sm:leading-[1.08]">
                 Your time is worth more when you <span className="text-brand italic font-normal">share it</span>.
               </h1>
 
               {/* Sub-copy */}
-              <p className="text-base sm:text-xl text-ink-muted leading-relaxed max-w-xl">
+              <p className="text-sm sm:text-lg lg:text-xl text-ink-muted leading-relaxed max-w-xl">
                 Teach what you know for one hour to earn one time credit. Spend those credits learning directly from makers, linguists, coders, and artisans. Zero money. Pure community reciprocity.
               </p>
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-col xs:flex-row items-stretch xs:items-center gap-3">
-                <Button href="/auth/signup" variant="primary" size="lg" icon={<ArrowRight className="w-4 h-4" />} iconPosition="right" className="w-full xs:w-auto">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
+                <Button href="/auth/signup" variant="primary" size="lg" icon={<ArrowRight className="w-4 h-4" />} iconPosition="right" className="w-full sm:w-auto justify-center min-h-[48px]">
                   Start Swapping Free
                 </Button>
-                <Button href="/discover" variant="secondary" size="lg" icon={<Compass className="w-4 h-4" />} className="w-full xs:w-auto">
+                <Button href="/discover" variant="secondary" size="lg" icon={<Compass className="w-4 h-4" />} className="w-full sm:w-auto justify-center min-h-[48px]">
                   Explore 120+ Skills
                 </Button>
               </div>
 
               {/* Trust & Proof Indicators */}
-              <div className="pt-5 sm:pt-6 border-t border-line grid grid-cols-3 gap-2 sm:gap-4 max-w-lg">
-                <div>
-                  <div className="text-lg sm:text-2xl font-extrabold text-ink font-editorial">1h = 1 Credit</div>
-                  <div className="text-[10px] sm:text-xs text-ink-muted mt-0.5">Equal human attention</div>
+              <div className="pt-4 sm:pt-6 border-t border-line grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-4 max-w-lg">
+                <div className="flex items-baseline justify-between sm:block border-b sm:border-0 border-line/40 pb-2 sm:pb-0">
+                  <div className="text-base sm:text-2xl font-extrabold text-ink font-editorial">1h = 1 Credit</div>
+                  <div className="text-xs text-ink-muted mt-0.5 sm:mt-1">Equal human attention</div>
                 </div>
-                <div>
-                  <div className="text-lg sm:text-2xl font-extrabold text-brand font-editorial">2-Way Lock</div>
-                  <div className="text-[10px] sm:text-xs text-ink-muted mt-0.5">Mutual confirmation</div>
+                <div className="flex items-baseline justify-between sm:block border-b sm:border-0 border-line/40 pb-2 sm:pb-0">
+                  <div className="text-base sm:text-2xl font-extrabold text-brand font-editorial">2-Way Lock</div>
+                  <div className="text-xs text-ink-muted mt-0.5 sm:mt-1">Mutual confirmation</div>
                 </div>
-                <div>
-                  <div className="text-lg sm:text-2xl font-extrabold text-ink font-editorial">$0 Always</div>
-                  <div className="text-[10px] sm:text-xs text-ink-muted mt-0.5">Non-monetary ledger</div>
+                <div className="flex items-baseline justify-between sm:block pb-1 sm:pb-0">
+                  <div className="text-base sm:text-2xl font-extrabold text-ink font-editorial">$0 Always</div>
+                  <div className="text-xs text-ink-muted mt-0.5 sm:mt-1">Non-monetary ledger</div>
                 </div>
               </div>
             </div>
@@ -152,12 +152,12 @@ export default function LandingPage() {
             <div className="space-y-2">
               <h3 className="text-xl font-bold text-ink font-editorial">Teach & Earn Time Credits</h3>
               <p className="text-sm text-ink-muted leading-relaxed">
-                List the craft, language, or technical skill you enjoy sharing. Conduct a 60-minute session over live video and earn 1.0 time credit.
+                List the craft, language, or technical skill you enjoy sharing. Conduct a 60-minute session over live video and earn 1 time credit.
               </p>
             </div>
             <div className="bg-surface-subtle p-3.5 rounded-xl border border-line text-xs font-semibold text-brand-deep flex items-center gap-2">
               <Clock className="w-4 h-4 text-brand" />
-              60 min teaching = +1.0 credit earned
+              60 min teaching = +1 credit earned
             </div>
           </div>
 
@@ -215,12 +215,12 @@ export default function LandingPage() {
         </div>
 
         {/* Category Pills */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
           {categories.map(cat => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap shrink-0 transition-all touch-target min-h-[40px] flex items-center ${
                 selectedCategory === cat
                   ? 'bg-brand text-white shadow-subtle'
                   : 'bg-surface border border-line text-ink-muted hover:text-ink hover:border-[#CED4C8]'
@@ -324,7 +324,7 @@ export default function LandingPage() {
                   <div>
                     <h3 className="font-bold text-sm text-ink">Equal Exchange Rate</h3>
                     <p className="text-xs text-ink-muted leading-relaxed">
-                      60 minutes taught = 1.0 credit. 30 minutes = 0.5 credit. 90 minutes = 1.5 credits. No negotiation, surges, or platform cuts.
+                      60 minutes taught = 1 credit. 120 minutes = 2 credits. 180 minutes = 3 credits. Whole-hour exchange only. Zero fractional credits, negotiation, surges, or platform cuts.
                     </p>
                   </div>
                 </div>
@@ -364,24 +364,9 @@ export default function LandingPage() {
                 </div>
 
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between p-3.5 bg-surface-subtle rounded-xl border border-line">
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-white border border-line flex items-center justify-center font-bold text-xs text-brand">
-                        30m
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-ink">Quick Sparring & Review</div>
-                        <div className="text-[11px] text-ink-muted">Code audits, pronunciation check, pitch feedback</div>
-                      </div>
-                    </div>
-                    <span className="text-xs font-extrabold text-brand bg-white px-2.5 py-1 rounded-lg border border-line">
-                      0.5 Credit
-                    </span>
-                  </div>
-
                   <div className="flex items-center justify-between p-3.5 bg-brand-soft/40 rounded-xl border border-brand/20">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-brand text-white flex items-center justify-center font-bold text-xs">
+                      <div className="w-9 h-9 rounded-xl bg-brand text-white flex items-center justify-center font-bold text-xs shrink-0">
                         60m
                       </div>
                       <div>
@@ -389,29 +374,44 @@ export default function LandingPage() {
                         <div className="text-[11px] text-ink-muted">Full lesson, design system workshop, bread baking</div>
                       </div>
                     </div>
-                    <span className="text-xs font-extrabold text-brand-deep bg-brand-soft px-2.5 py-1 rounded-lg border border-brand/30">
-                      1.0 Credit
+                    <span className="text-xs font-extrabold text-brand-deep bg-brand-soft px-2.5 py-1 rounded-lg border border-brand/30 shrink-0">
+                      1 Credit
                     </span>
                   </div>
 
                   <div className="flex items-center justify-between p-3.5 bg-surface-subtle rounded-xl border border-line">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-white border border-line flex items-center justify-center font-bold text-xs text-brand">
-                        90m
+                      <div className="w-9 h-9 rounded-xl bg-white border border-line flex items-center justify-center font-bold text-xs text-brand shrink-0">
+                        120m
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-ink">Comprehensive Workshop</div>
+                        <div className="text-[11px] text-ink-muted">End-to-end architecture review, live pottery firing, essay editing</div>
+                      </div>
+                    </div>
+                    <span className="text-xs font-extrabold text-brand bg-white px-2.5 py-1 rounded-lg border border-line shrink-0">
+                      2 Credits
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between p-3.5 bg-surface-subtle rounded-xl border border-line">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-white border border-line flex items-center justify-center font-bold text-xs text-brand shrink-0">
+                        180m
                       </div>
                       <div>
                         <div className="text-xs font-bold text-ink">Intensive Masterclass</div>
-                        <div className="text-[11px] text-ink-muted">Complex architecture, wheel pottery, essay editing</div>
+                        <div className="text-[11px] text-ink-muted">Complex system design, deep monograph editing, master craftsmanship</div>
                       </div>
                     </div>
-                    <span className="text-xs font-extrabold text-brand bg-white px-2.5 py-1 rounded-lg border border-line">
-                      1.5 Credits
+                    <span className="text-xs font-extrabold text-brand bg-white px-2.5 py-1 rounded-lg border border-line shrink-0">
+                      3 Credits
                     </span>
                   </div>
                 </div>
 
                 <div className="p-3.5 bg-[#FAF0E8] rounded-xl border border-[#F2DACB] text-xs text-[#7A4323] leading-relaxed">
-                  <strong>Starter Grant:</strong> Every accepted member receives <strong>2.0 Time Credits</strong> automatically so you can immediately book your first learning sessions without waiting.
+                  <strong>Starter Grant:</strong> Every accepted member receives <strong>3 Time Credits</strong> automatically so you can immediately book your first learning sessions without waiting.
                 </div>
               </div>
             </div>
@@ -515,13 +515,13 @@ export default function LandingPage() {
               Begin your first skill exchange today.
             </h2>
             <p className="text-base sm:text-lg text-white/80 leading-relaxed">
-              Create your profile in 3 minutes, receive 2.0 welcome time credits, and start connecting with mentors who care about real craft.
+              Create your profile in 3 minutes, receive 3 welcome time credits, and start connecting with mentors who care about real craft.
             </p>
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <Button href="/auth/signup" variant="primary" size="lg" className="bg-white text-brand-deep hover:bg-canvas">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+              <Button href="/auth/signup" variant="primary" size="lg" className="w-full sm:w-auto bg-white text-brand-deep hover:bg-canvas justify-center min-h-[48px]">
                 Start Swapping Now
               </Button>
-              <Button href="/discover" variant="ghost" size="lg" className="text-white hover:bg-white/10 border border-white/20">
+              <Button href="/discover" variant="ghost" size="lg" className="w-full sm:w-auto text-white hover:bg-white/10 border border-white/20 justify-center min-h-[48px]">
                 Browse Skills First
               </Button>
             </div>

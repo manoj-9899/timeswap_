@@ -16,7 +16,7 @@ export function CreditPill({
   showLabel = true,
   className = '',
 }: CreditPillProps) {
-  const formatted = Number.isInteger(amount) ? amount.toFixed(0) : amount.toFixed(1);
+  const formatted = Math.round(amount).toString();
 
   const colors = {
     balance: 'bg-brand-soft text-brand-deep border-brand/20',

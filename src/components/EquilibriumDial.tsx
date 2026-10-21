@@ -3,13 +3,14 @@
 import React, { useState } from 'react';
 import { Clock, Check, ArrowRight, Sparkles, RefreshCw, ShieldCheck } from 'lucide-react';
 import { Button } from './ui/Button';
+import { SUPPORTED_SESSION_DURATIONS, calculateCreditCost, SessionDuration } from '../lib/domain/duration';
 
 export function EquilibriumDial() {
-  const [duration, setDuration] = useState<60 | 120 | 180>(60);
+  const [duration, setDuration] = useState<SessionDuration>(60);
   const [isBalanced, setIsBalanced] = useState(false);
   const [isSettling, setIsSettling] = useState(false);
 
-  const credit = duration === 60 ? 1 : duration === 120 ? 2 : 3;
+  const credit = calculateCreditCost(duration);
 
   const handleSimulateExchange = () => {
     setIsSettling(true);
@@ -30,24 +31,24 @@ export function EquilibriumDial() {
       <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-accent-peach/30 rounded-full blur-3xl pointer-events-none" />
 
       {/* Header bar */}
-      <div className="flex items-center justify-between pb-5 border-b border-line mb-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-5 border-b border-line mb-4 sm:mb-6">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-brand animate-pulse-subtle" />
+          <span className="w-2.5 h-2.5 rounded-full bg-brand animate-pulse-subtle shrink-0" />
           <span className="text-xs font-bold uppercase tracking-wider text-ink-muted">
             The Reciprocal Equilibrium Engine
           </span>
         </div>
-        <div className="flex items-center gap-1.5 bg-surface-subtle p-1 rounded-xl border border-line">
-          {([60, 120, 180] as const).map(d => (
+        <div className="flex items-center gap-1.5 bg-surface-subtle p-1 rounded-xl border border-line w-full sm:w-auto justify-center sm:justify-start">
+          {SUPPORTED_SESSION_DURATIONS.map(d => (
             <button
               key={d}
               onClick={() => {
                 setDuration(d);
                 setIsBalanced(false);
               }}
-              className={`px-2.5 py-1 text-xs font-semibold rounded-lg transition-all ${
+              className={`flex-1 sm:flex-initial min-w-[56px] min-h-[38px] px-3 py-1.5 text-xs font-semibold rounded-lg transition-all touch-target flex items-center justify-center ${
                 duration === d
-                  ? 'bg-surface text-brand-deep shadow-xs border border-line'
+                  ? 'bg-surface text-brand-deep shadow-xs border border-line font-bold'
                   : 'text-ink-muted hover:text-ink'
               }`}
             >
@@ -60,7 +61,7 @@ export function EquilibriumDial() {
       {/* Interactive Dial Graphic */}
       <div className="relative py-4 flex flex-col items-center justify-center">
         {/* Kinetic Arc SVG */}
-        <div className="relative w-56 h-56 flex items-center justify-center">
+        <div className="relative w-52 h-52 sm:w-56 sm:h-56 flex items-center justify-center mx-auto">
           <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
             {/* Background Track */}
             <circle
@@ -161,13 +162,19 @@ export function EquilibriumDial() {
         </div>
 
         {/* Action Trigger */}
-        <div className="mt-5 w-full flex items-center justify-between gap-3">
-          <span className="text-xs text-ink-muted hidden sm:inline">
+        <div className="mt-5 w-full flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <span className="text-xs text-ink-muted text-center sm:text-left">
             Zero money involved. Pure reciprocity.
           </span>
-          <div className="flex items-center gap-2 ml-auto">
+          <div className="flex items-center justify-center sm:justify-end gap-2 w-full sm:w-auto">
             {isBalanced ? (
-              <Button variant="outline" size="sm" onClick={handleReset} icon={<RefreshCw className="w-3.5 h-3.5" />}>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleReset}
+                icon={<RefreshCw className="w-3.5 h-3.5" />}
+                className="w-full sm:w-auto min-h-[44px]"
+              >
                 Reset Demonstration
               </Button>
             ) : (
@@ -177,6 +184,7 @@ export function EquilibriumDial() {
                 onClick={handleSimulateExchange}
                 loading={isSettling}
                 icon={<Sparkles className="w-3.5 h-3.5" />}
+                className="w-full sm:w-auto min-h-[44px]"
               >
                 Simulate 2-Way Completion
               </Button>

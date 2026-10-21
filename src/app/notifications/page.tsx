@@ -105,7 +105,7 @@ export default function NotificationsPage() {
                     )}
                     {n.creditImpact !== undefined && (
                       <Badge variant={n.creditImpact > 0 ? 'success' : 'peach'} size="sm">
-                        {n.creditImpact > 0 ? `+${n.creditImpact}` : n.creditImpact} Credit
+                        {n.creditImpact > 0 ? `+${n.creditImpact}` : n.creditImpact} {Math.abs(n.creditImpact) === 1 ? 'Credit' : 'Credits'}
                       </Badge>
                     )}
                   </div>

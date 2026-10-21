@@ -32,8 +32,8 @@ export default function WalletPage() {
 
   const handleClaimBonusCredit = () => {
     updateCurrentUser({
-      availableCredits: Number((currentUser.availableCredits + 1.0).toFixed(1)),
-      lifetimeCreditsEarned: Number((currentUser.lifetimeCreditsEarned + 1.0).toFixed(1)),
+      availableCredits: Math.floor(currentUser.availableCredits) + 1,
+      lifetimeCreditsEarned: Math.floor(currentUser.lifetimeCreditsEarned) + 1,
     });
   };
 

@@ -98,7 +98,7 @@ export default function HelpPage() {
           <Clock className="w-5 h-5 text-brand" />
           <h2 className="text-sm font-bold text-ink">Time Credit Math</h2>
           <p className="text-xs text-ink-muted leading-relaxed">
-            1 hour = 1.0 credit. Predictable, non-monetary, with 3 welcome credits for all new members.
+            1 hour = 1 credit. Predictable, non-monetary, with 3 welcome credits for all new members.
           </p>
         </div>
 

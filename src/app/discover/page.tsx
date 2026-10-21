@@ -111,7 +111,7 @@ export default function DiscoverPage() {
             Discover Mentors & Skills
           </h1>
           <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-            Connect with {members.length - 1} practitioners offering verified 1-on-1 exchanges for 1.0 time credit per hour.
+            Connect with {members.length - 1} practitioners offering verified 1-on-1 exchanges for 1 time credit per hour.
           </p>
         </div>
 

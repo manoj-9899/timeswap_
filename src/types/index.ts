@@ -54,7 +54,8 @@ export interface Member {
   reviews: Review[];
 }
 
-export type SessionDuration = 60 | 120 | 180;
+import type { SessionDuration } from '../lib/domain/duration';
+export type { SessionDuration };
 
 export interface Session {
   id: string;

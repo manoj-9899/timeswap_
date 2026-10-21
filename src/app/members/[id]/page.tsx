@@ -23,6 +23,7 @@ import { Badge } from '../../../components/ui/Badge';
 import { Avatar } from '../../../components/ui/Avatar';
 import { Card } from '../../../components/ui/Card';
 import { CreditPill } from '../../../components/ui/CreditPill';
+import { SUPPORTED_SESSION_DURATIONS, calculateCreditCost } from '../../../lib/domain/duration';
 import { Modal } from '../../../components/ui/Modal';
 import { Input } from '../../../components/ui/Input';
 import { Textarea } from '../../../components/ui/Textarea';
@@ -60,7 +61,7 @@ export default function MemberProfilePage() {
     );
   }
 
-  const creditCost = duration === 60 ? 1 : duration === 120 ? 2 : 3;
+  const creditCost = calculateCreditCost(duration);
   const hasEnoughCredit = currentUser.availableCredits >= creditCost;
 
   const handleOpenBooking = (skill?: SkillItem) => {
@@ -222,7 +223,7 @@ export default function MemberProfilePage() {
                 Skills Offered for Exchange
               </h2>
               <span className="text-xs text-brand-deep font-semibold bg-brand-soft px-2.5 py-1 rounded-pill">
-                1 Hour = 1.0 Credit
+                1 Hour = 1 Credit
               </span>
             </div>
 
@@ -426,8 +427,8 @@ export default function MemberProfilePage() {
               Exchange Duration & Credit Cost
             </label>
             <div className="grid grid-cols-3 gap-2">
-              {([60, 120, 180] as const).map(d => {
-                const cost = d / 60;
+              {SUPPORTED_SESSION_DURATIONS.map(d => {
+                const cost = calculateCreditCost(d);
                 const isSelected = duration === d;
                 return (
                   <button
