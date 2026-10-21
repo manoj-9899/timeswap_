@@ -226,7 +226,7 @@ export default function SignUpPage() {
                 type="text"
                 value={name}
                 onChange={e => setName(e.target.value)}
-                placeholder="e.g. Maya Lin"
+                placeholder="e.g. Meera Nambiar"
                 leftIcon={<User className="w-4 h-4" />}
                 required
               />
@@ -286,7 +286,7 @@ export default function SignUpPage() {
                 type="text"
                 value={primarySkill}
                 onChange={e => setPrimarySkill(e.target.value)}
-                placeholder="e.g. Sourdough baking, Python, Greek, Figma"
+                placeholder="e.g. Sourdough baking, Python, Flute, Figma"
                 hint="You will detail your syllabus and availability during guided onboarding."
                 required
               />

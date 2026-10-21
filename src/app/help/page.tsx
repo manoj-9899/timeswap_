@@ -26,7 +26,7 @@ export default function HelpPage() {
   const helpTopics = [
     {
       q: 'How does the TimeSwap credit economy work?',
-      a: 'TimeSwap operates on an atomic reciprocity model: 1 hour of teaching earns 1 time credit. You can spend that credit learning from any other community member. There is no direct barter bottleneck (if you teach Alex, you do not have to learn from Alex; you can learn from Kenji or Maya).',
+      a: 'TimeSwap operates on an atomic reciprocity model: 1 hour of teaching earns 1 time credit. You can spend that credit learning from any other community member. There is no direct barter bottleneck (if you teach Rahul, you do not have to learn from Rahul; you can learn from Arjun or Meera).',
       cat: 'Credits'
     },
     {

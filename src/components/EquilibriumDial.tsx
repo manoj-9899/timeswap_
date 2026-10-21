@@ -133,7 +133,7 @@ export function EquilibriumDial() {
               <div className="text-[11px] font-bold uppercase tracking-wider text-brand-deep">
                 Phase A: Teach
               </div>
-              <p className="text-xs font-semibold text-ink truncate">Elena teaches Swiss Typography</p>
+              <p className="text-xs font-semibold text-ink truncate">Vikram teaches Multilingual Typography</p>
               <p className="text-[11px] text-ink-muted">Earns 1 non-cash credit</p>
             </div>
           </div>
@@ -147,8 +147,8 @@ export function EquilibriumDial() {
               <div className="text-[11px] font-bold uppercase tracking-wider text-[#733F23]">
                 Phase B: Learn
               </div>
-              <p className="text-xs font-semibold text-ink truncate">Elena learns Conversational Japanese</p>
-              <p className="text-[11px] text-ink-muted">From Kenji in Kyoto</p>
+              <p className="text-xs font-semibold text-ink truncate">Vikram learns Carnatic Flute</p>
+              <p className="text-[11px] text-ink-muted">From Arjun in Chennai</p>
             </div>
           </div>
         </div>

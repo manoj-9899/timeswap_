@@ -173,7 +173,7 @@ async function runMobileAuthE2ETests() {
     await page.goto(`${BASE_URL}/auth/signup`, { waitUntil: 'networkidle' });
     await page.waitForSelector('input[type="email"]');
 
-    const nameInput = page.locator('input[placeholder*="Maya Lin"]');
+    const nameInput = page.locator('input[placeholder*="Meera Nambiar"], input[name="name"]');
     const signupEmail = page.locator('input[type="email"]');
     const signupPass = page.locator('input[placeholder*="At least 8 characters"]');
     const confirmPass = page.locator('input[placeholder*="Repeat password"]');

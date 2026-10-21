@@ -47,7 +47,7 @@ export default function LandingPage() {
   const faqs = [
     {
       q: 'Do I have to trade skills directly with the same person?',
-      a: 'No! That is the core breakthrough of TimeSwap. If you teach Elena how to code for one hour, you earn one time credit. You can immediately spend that credit to learn conversational Japanese from Kenji, or ceramic pottery from Maya. Our community ledger settles credits globally.'
+      a: 'No! That is the core breakthrough of TimeSwap. If you teach Vikram how to code for one hour, you earn one time credit. You can immediately spend that credit to learn Carnatic flute from Arjun, or ceramic pottery from Meera. Our community ledger settles credits globally.'
     },
     {
       q: 'How does the 2-way confirmation work?',
@@ -117,7 +117,7 @@ export default function LandingPage() {
                   <div className="text-xs text-ink-muted mt-0.5 sm:mt-1">Mutual confirmation</div>
                 </div>
                 <div className="flex items-baseline justify-between sm:block pb-1 sm:pb-0">
-                  <div className="text-base sm:text-2xl font-extrabold text-ink font-editorial">$0 Always</div>
+                  <div className="text-base sm:text-2xl font-extrabold text-ink font-editorial">Zero Fees Always</div>
                   <div className="text-xs text-ink-muted mt-0.5 sm:mt-1">Non-monetary ledger</div>
                 </div>
               </div>
@@ -518,10 +518,10 @@ export default function LandingPage() {
               Create your profile in 3 minutes, receive 3 welcome time credits, and start connecting with mentors who care about real craft.
             </p>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-              <Button href="/auth/signup" variant="primary" size="lg" className="w-full sm:w-auto bg-white text-brand-deep hover:bg-canvas justify-center min-h-[48px]">
+              <Button href="/auth/signup" variant="inverse" size="lg" className="w-full sm:w-auto justify-center min-h-[48px]">
                 Start Swapping Now
               </Button>
-              <Button href="/discover" variant="ghost" size="lg" className="w-full sm:w-auto text-white hover:bg-white/10 border border-white/20 justify-center min-h-[48px]">
+              <Button href="/discover" variant="ghost-white" size="lg" className="w-full sm:w-auto justify-center min-h-[48px]">
                 Browse Skills First
               </Button>
             </div>

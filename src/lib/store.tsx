@@ -70,7 +70,8 @@ interface TimeSwapContextType {
   signOut: () => Promise<void>;
 }
 
-const STORAGE_KEY = 'timeswap_state_v1';
+const STORAGE_KEY = 'timeswap_state_v2_in';
+const LEGACY_STORAGE_KEYS = ['timeswap_state_v1'];
 
 const TimeSwapContext = createContext<TimeSwapContextType | null>(null);
 
@@ -527,15 +528,26 @@ export function TimeSwapProvider({ children }: { children: React.ReactNode }) {
   // Load from LocalStorage
   useEffect(() => {
     try {
+      // Clean up legacy v1 demo data keys from previous development/testing sessions
+      LEGACY_STORAGE_KEYS.forEach(k => {
+        try { localStorage.removeItem(k); } catch (_) {}
+      });
+
       const stored = localStorage.getItem(STORAGE_KEY);
       if (stored) {
         const parsed = JSON.parse(stored);
-        if (parsed.currentUser) setCurrentUser(parsed.currentUser);
-        if (parsed.members) setMembers(parsed.members);
-        if (parsed.sessions) setSessions(parsed.sessions);
-        if (parsed.transactions) setTransactions(parsed.transactions);
-        if (parsed.conversations) setConversations(parsed.conversations);
-        if (parsed.notifications) setNotifications(parsed.notifications);
+        // Defensive check: If stored data contains legacy demo identities, discard and use fresh localized seed
+        const isLegacyDemo = parsed.currentUser?.name === 'Ana Silva' || parsed.members?.some((m: Member) => m.name === 'Elena Rostova');
+        if (!isLegacyDemo) {
+          if (parsed.currentUser) setCurrentUser(parsed.currentUser);
+          if (parsed.members) setMembers(parsed.members);
+          if (parsed.sessions) setSessions(parsed.sessions);
+          if (parsed.transactions) setTransactions(parsed.transactions);
+          if (parsed.conversations) setConversations(parsed.conversations);
+          if (parsed.notifications) setNotifications(parsed.notifications);
+        } else {
+          localStorage.removeItem(STORAGE_KEY);
+        }
       }
     } catch (err) {
       console.warn('Failed to load TimeSwap state from localStorage:', err);
@@ -1154,7 +1166,10 @@ export function TimeSwapProvider({ children }: { children: React.ReactNode }) {
   }, [authUserId]);
 
   const resetDemoData = useCallback(() => {
-    localStorage.removeItem(STORAGE_KEY);
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+      LEGACY_STORAGE_KEYS.forEach(k => localStorage.removeItem(k));
+    } catch (_) {}
     setCurrentUser(INITIAL_CURRENT_USER);
     setMembers(INITIAL_MEMBERS);
     setSessions(INITIAL_SESSIONS);
@@ -1176,6 +1191,7 @@ export function TimeSwapProvider({ children }: { children: React.ReactNode }) {
     setNotifications([]);
     try {
       localStorage.removeItem(STORAGE_KEY);
+      LEGACY_STORAGE_KEYS.forEach(k => localStorage.removeItem(k));
     } catch (e) {}
 
     if (typeof window !== 'undefined') {

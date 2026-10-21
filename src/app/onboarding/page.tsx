@@ -43,7 +43,7 @@ export default function OnboardingPage() {
   const [headline, setHeadline] = useState(currentUser.headline || '');
   const [bio, setBio] = useState(currentUser.bio || '');
   const [location, setLocation] = useState(currentUser.location || '');
-  const [timezone, setTimezone] = useState(currentUser.timezone || 'UTC');
+  const [timezone, setTimezone] = useState(currentUser.timezone || 'IST (UTC+5:30)');
   const [avatar, setAvatar] = useState(currentUser.avatar || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80');
 
   // Teaching skills
@@ -54,13 +54,13 @@ export default function OnboardingPage() {
 
   // Learning interests
   const [learnInterests, setLearnInterests] = useState<string[]>(
-    currentUser.skillsLearning || ['Conversational Japanese', 'Ceramic Pottery Centering', 'Sourdough Bread Baking']
+    currentUser.skillsLearning || ['Conversational Tamil', 'Blue Pottery Centering', 'Sourdough & Ancient Millets']
   );
   const [newInterestInput, setNewInterestInput] = useState('');
 
   // Availability
   const [selectedDays, setSelectedDays] = useState<string[]>(['Monday', 'Wednesday', 'Saturday']);
-  const [timeSlot, setTimeSlot] = useState('18:00 to 21:00 WET');
+  const [timeSlot, setTimeSlot] = useState('18:00 to 21:00 IST');
   const [cadence, setCadence] = useState('Bi-weekly 60-minute exchanges');
 
   const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -367,14 +367,14 @@ export default function OnboardingPage() {
                   label="Display Name"
                   value={name}
                   onChange={e => setName(e.target.value)}
-                  placeholder="e.g. Ana Silva"
+                  placeholder="e.g. Ananya Rao"
                   required
                 />
                 <Input
                   label="Headline / Profession"
                   value={headline}
                   onChange={e => setHeadline(e.target.value)}
-                  placeholder="e.g. Senior Frontend Architect"
+                  placeholder="e.g. Principal Product Designer"
                   required
                 />
               </div>
@@ -392,13 +392,13 @@ export default function OnboardingPage() {
                   label="Location"
                   value={location}
                   onChange={e => setLocation(e.target.value)}
-                  placeholder="e.g. Lisbon, Portugal"
+                  placeholder="e.g. Bengaluru, Karnataka"
                 />
                 <Input
                   label="Timezone"
                   value={timezone}
                   onChange={e => setTimezone(e.target.value)}
-                  placeholder="e.g. WET (UTC+0)"
+                  placeholder="e.g. IST (UTC+5:30)"
                 />
               </div>
             </div>
@@ -477,7 +477,7 @@ export default function OnboardingPage() {
                     label="Add a topic of interest"
                     value={newInterestInput}
                     onChange={e => setNewInterestInput(e.target.value)}
-                    placeholder="e.g. Sourdough baking, Woodworking, Japanese"
+                    placeholder="e.g. Sourdough baking, Carnatic flute, Pottery"
                     onKeyDown={e => {
                       if (e.key === 'Enter') {
                         e.preventDefault();
@@ -559,7 +559,7 @@ export default function OnboardingPage() {
                   label="Preferred Time Window"
                   value={timeSlot}
                   onChange={e => setTimeSlot(e.target.value)}
-                  placeholder="e.g. 18:00 to 21:00 WET"
+                  placeholder="e.g. 18:00 to 21:00 IST"
                 />
                 <Input
                   label="Preferred Cadence"
