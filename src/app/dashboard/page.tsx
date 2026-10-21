@@ -37,33 +37,33 @@ export default function DashboardPage() {
     .slice(0, 3);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+    <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 space-y-6 sm:space-y-10">
       {/* 1. WELCOME & ACTION BAR */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-line">
-        <div className="space-y-1.5">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 sm:gap-6 pb-4 sm:pb-6 border-b border-line">
+        <div className="space-y-1">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-brand" />
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-deep">
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-deep">
               Reciprocal Dashboard
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-ink font-editorial tracking-tight">
+          <h1 className="text-2xl sm:text-4xl font-extrabold text-ink font-editorial tracking-tight">
             Welcome back, {currentUser.name.split(' ')[0]}
           </h1>
-          <p className="text-sm text-ink-muted">
+          <p className="text-xs sm:text-sm text-ink-muted">
             You have <strong className="text-ink">{currentUser.availableCredits} Time Credits</strong> available to exchange for learning.
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
-          <Link href="/discover">
-            <Button variant="primary" icon={<Compass className="w-4 h-4" />}>
+        <div className="grid grid-cols-2 sm:flex sm:items-center gap-2 sm:gap-3 w-full md:w-auto">
+          <Link href="/discover" className="w-full sm:w-auto">
+            <Button variant="primary" icon={<Compass className="w-4 h-4" />} className="w-full sm:w-auto">
               Discover Skills
             </Button>
           </Link>
-          <Link href="/profile">
-            <Button variant="secondary" icon={<Plus className="w-4 h-4" />}>
-              Offer a New Skill
+          <Link href="/profile" className="w-full sm:w-auto">
+            <Button variant="secondary" icon={<Plus className="w-4 h-4" />} className="w-full sm:w-auto">
+              Offer a Skill
             </Button>
           </Link>
         </div>
@@ -71,7 +71,7 @@ export default function DashboardPage() {
 
       {/* 2. CRITICAL ACTION CALLOUT: PENDING 2-WAY COMPLETION */}
       {pendingConfirmation && (
-        <div className="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
+        <div className="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
           <div className="flex items-start gap-3.5">
             <div className="w-10 h-10 rounded-xl bg-amber-100 border border-amber-300/60 flex items-center justify-center text-amber-800 flex-shrink-0 mt-0.5">
               <AlertCircle className="w-5 h-5 text-amber-700" />
@@ -91,8 +91,8 @@ export default function DashboardPage() {
               </p>
             </div>
           </div>
-          <Link href={`/sessions/${pendingConfirmation.id}/complete`}>
-            <Button variant="primary" size="sm" className="whitespace-nowrap bg-amber-800 hover:bg-amber-900 text-white">
+          <Link href={`/sessions/${pendingConfirmation.id}/complete`} className="w-full sm:w-auto">
+            <Button variant="primary" size="sm" className="w-full sm:w-auto whitespace-nowrap bg-amber-800 hover:bg-amber-900 text-white">
               Review & Release Credit
             </Button>
           </Link>
@@ -100,72 +100,72 @@ export default function DashboardPage() {
       )}
 
       {/* 3. TIME-CREDIT SUMMARY TILES */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
         {/* Available Balance */}
-        <div className="bg-surface rounded-card p-5 border border-line shadow-subtle space-y-3">
+        <div className="bg-surface rounded-card p-3.5 sm:p-5 border border-line shadow-subtle space-y-2 sm:space-y-3">
           <div className="flex items-center justify-between text-xs font-semibold text-ink-muted">
-            <span>Available Balance</span>
-            <Clock className="w-4 h-4 text-brand" />
+            <span className="truncate">Available Balance</span>
+            <Clock className="w-4 h-4 text-brand flex-shrink-0" />
           </div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-3xl sm:text-4xl font-extrabold text-ink font-editorial">
+          <div className="flex items-baseline gap-1.5 sm:gap-2">
+            <span className="text-2xl sm:text-4xl font-extrabold text-ink font-editorial">
               {currentUser.availableCredits.toFixed(1)}
             </span>
-            <span className="text-xs font-bold text-brand-deep">Time Credits</span>
+            <span className="text-[10px] sm:text-xs font-bold text-brand-deep">Credits</span>
           </div>
-          <p className="text-[11px] text-ink-muted leading-tight">
-            Equals {currentUser.availableCredits * 60} minutes of 1-on-1 learning time.
+          <p className="text-[10px] sm:text-[11px] text-ink-muted leading-tight line-clamp-2">
+            Equals {currentUser.availableCredits * 60} minutes of learning time.
           </p>
         </div>
 
         {/* Hours Taught */}
-        <div className="bg-surface rounded-card p-5 border border-line shadow-subtle space-y-3">
+        <div className="bg-surface rounded-card p-3.5 sm:p-5 border border-line shadow-subtle space-y-2 sm:space-y-3">
           <div className="flex items-center justify-between text-xs font-semibold text-ink-muted">
-            <span>Hours Taught</span>
-            <TrendingUp className="w-4 h-4 text-brand" />
+            <span className="truncate">Hours Taught</span>
+            <TrendingUp className="w-4 h-4 text-brand flex-shrink-0" />
           </div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-3xl sm:text-4xl font-extrabold text-ink font-editorial">
+          <div className="flex items-baseline gap-1.5 sm:gap-2">
+            <span className="text-2xl sm:text-4xl font-extrabold text-ink font-editorial">
               {currentUser.hoursTaught}h
             </span>
-            <span className="text-xs font-semibold text-ink-muted">shared</span>
+            <span className="text-[10px] sm:text-xs font-semibold text-ink-muted">shared</span>
           </div>
-          <p className="text-[11px] text-brand-deep font-medium leading-tight">
-            +{currentUser.lifetimeCreditsEarned.toFixed(1)} credits earned lifetime.
+          <p className="text-[10px] sm:text-[11px] text-brand-deep font-medium leading-tight line-clamp-2">
+            +{currentUser.lifetimeCreditsEarned.toFixed(1)} credits earned.
           </p>
         </div>
 
         {/* Hours Learned */}
-        <div className="bg-surface rounded-card p-5 border border-line shadow-subtle space-y-3">
+        <div className="bg-surface rounded-card p-3.5 sm:p-5 border border-line shadow-subtle space-y-2 sm:space-y-3">
           <div className="flex items-center justify-between text-xs font-semibold text-ink-muted">
-            <span>Hours Learned</span>
-            <Sparkles className="w-4 h-4 text-[#7A4323]" />
+            <span className="truncate">Hours Learned</span>
+            <Sparkles className="w-4 h-4 text-[#7A4323] flex-shrink-0" />
           </div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-3xl sm:text-4xl font-extrabold text-ink font-editorial">
+          <div className="flex items-baseline gap-1.5 sm:gap-2">
+            <span className="text-2xl sm:text-4xl font-extrabold text-ink font-editorial">
               {currentUser.hoursLearned}h
             </span>
-            <span className="text-xs font-semibold text-ink-muted">absorbed</span>
+            <span className="text-[10px] sm:text-xs font-semibold text-ink-muted">absorbed</span>
           </div>
-          <p className="text-[11px] text-ink-muted leading-tight">
-            {currentUser.lifetimeCreditsSpent.toFixed(1)} credits spent on growth.
+          <p className="text-[10px] sm:text-[11px] text-ink-muted leading-tight line-clamp-2">
+            {currentUser.lifetimeCreditsSpent.toFixed(1)} credits spent.
           </p>
         </div>
 
         {/* Escrow / Pending */}
-        <div className="bg-surface-subtle rounded-card p-5 border border-line space-y-3">
+        <div className="bg-surface-subtle rounded-card p-3.5 sm:p-5 border border-line space-y-2 sm:space-y-3">
           <div className="flex items-center justify-between text-xs font-semibold text-ink-muted">
-            <span>Locked in Escrow</span>
-            <CheckCircle2 className="w-4 h-4 text-ink-muted" />
+            <span className="truncate">Escrow</span>
+            <CheckCircle2 className="w-4 h-4 text-ink-muted flex-shrink-0" />
           </div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-3xl sm:text-4xl font-extrabold text-ink font-editorial">
+          <div className="flex items-baseline gap-1.5 sm:gap-2">
+            <span className="text-2xl sm:text-4xl font-extrabold text-ink font-editorial">
               {currentUser.pendingCredits.toFixed(1)}
             </span>
-            <span className="text-xs font-semibold text-ink-muted">Credits</span>
+            <span className="text-[10px] sm:text-xs font-semibold text-ink-muted">Credits</span>
           </div>
-          <p className="text-[11px] text-ink-muted leading-tight">
-            Held safely until mutual session sign-off.
+          <p className="text-[10px] sm:text-[11px] text-ink-muted leading-tight line-clamp-2">
+            Held safely until mutual sign-off.
           </p>
         </div>
       </div>

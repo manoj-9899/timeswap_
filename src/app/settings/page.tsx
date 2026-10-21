@@ -51,25 +51,25 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 space-y-5 sm:space-y-8">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-line">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 sm:pb-6 border-b border-line">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
             <Settings className="w-4 h-4 text-brand" />
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-deep">
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-deep">
               Preferences
             </span>
           </div>
-          <h1 className="text-3xl font-extrabold text-ink font-editorial tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-ink font-editorial tracking-tight">
             Account & Platform Settings
           </h1>
-          <p className="text-sm text-ink-muted">
+          <p className="text-xs sm:text-sm text-ink-muted">
             Manage your account security, notification triggers, and demo environment.
           </p>
         </div>
 
-        <Button variant="primary" onClick={handleSavePreferences}>
+        <Button variant="primary" onClick={handleSavePreferences} className="w-full sm:w-auto">
           Save Preferences
         </Button>
       </div>

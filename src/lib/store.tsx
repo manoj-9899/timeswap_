@@ -15,6 +15,7 @@ import {
 import { 
   INITIAL_MEMBERS, 
   INITIAL_CURRENT_USER, 
+  EMPTY_CURRENT_USER,
   INITIAL_SESSIONS, 
   INITIAL_TRANSACTIONS, 
   INITIAL_CONVERSATIONS, 
@@ -391,6 +392,11 @@ export function TimeSwapProvider({ children }: { children: React.ReactNode }) {
         }
       } else {
         setAuthUserId(null);
+        setCurrentUser(EMPTY_CURRENT_USER);
+        setSessions([]);
+        setTransactions([]);
+        setConversations([]);
+        setNotifications([]);
       }
     });
 
@@ -1154,8 +1160,18 @@ export function TimeSwapProvider({ children }: { children: React.ReactNode }) {
       await supabase.auth.signOut();
     }
     setAuthUserId(null);
-    setCurrentUser(INITIAL_CURRENT_USER);
-    localStorage.removeItem(STORAGE_KEY);
+    setCurrentUser(EMPTY_CURRENT_USER);
+    setSessions([]);
+    setTransactions([]);
+    setConversations([]);
+    setNotifications([]);
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (e) {}
+
+    if (typeof window !== 'undefined') {
+      window.location.href = '/auth/signin';
+    }
   }, []);
 
   return (

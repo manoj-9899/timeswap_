@@ -1,23 +1,35 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { Mail, Lock, ArrowRight, UserCheck, Sparkles, CheckCircle2 } from 'lucide-react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { Mail, Lock, ArrowRight, UserCheck, Sparkles, Eye, EyeOff } from 'lucide-react';
 import { Button } from '../../../components/ui/Button';
 import { Input } from '../../../components/ui/Input';
 import { Badge } from '../../../components/ui/Badge';
 import { Avatar } from '../../../components/ui/Avatar';
 import { useTimeSwap } from '../../../lib/store';
 import { getSupabaseBrowserClient } from '../../../lib/supabase/client';
+import { sanitizeRedirectPath } from '../../../lib/auth-utils';
 
-export default function SignInPage() {
+function SignInContent() {
   const router = useRouter();
-  const { currentUser, members, updateCurrentUser } = useTimeSwap();
-  const [email, setEmail] = useState('ana.silva@example.com');
-  const [password, setPassword] = useState('timeswap-demo-pass');
+  const searchParams = useSearchParams();
+  const nextParam = searchParams.get('next');
+  const errorParam = searchParams.get('error');
+
+  const { members, updateCurrentUser, backendStatus } = useTimeSwap();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    if (errorParam) {
+      setError(decodeURIComponent(errorParam));
+    }
+  }, [errorParam]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,7 +54,7 @@ export default function SignInPage() {
         return;
       }
 
-      // Fetch profile to check onboarding state
+      // Fetch profile to verify onboarding state
       if (data.user) {
         const { data: profile } = await supabase
           .from('profiles')
@@ -51,10 +63,11 @@ export default function SignInPage() {
           .maybeSingle();
 
         const typedProfile = profile as { onboarding_completed?: boolean; onboarding_step?: number } | null;
+        const safeNext = sanitizeRedirectPath(nextParam, '/dashboard');
 
         setLoading(false);
         if (typedProfile?.onboarding_completed) {
-          router.push('/dashboard');
+          router.push(safeNext);
         } else {
           router.push('/onboarding');
         }
@@ -65,7 +78,8 @@ export default function SignInPage() {
     // Mock fallback mode when Supabase is not configured
     setTimeout(() => {
       setLoading(false);
-      router.push('/dashboard');
+      const safeNext = sanitizeRedirectPath(nextParam, '/dashboard');
+      router.push(safeNext);
     }, 500);
   };
 
@@ -85,11 +99,12 @@ export default function SignInPage() {
         skillsLearning: target.skillsLearning,
         hoursTaught: target.hoursTaught,
         hoursLearned: target.hoursLearned,
-        availableCredits: 3.0,
+        availableCredits: 3,
         onboardingCompleted: true,
         onboardingStep: 6,
       });
-      router.push('/dashboard');
+      const safeNext = sanitizeRedirectPath(nextParam, '/dashboard');
+      router.push(safeNext);
     }
   };
 
@@ -144,11 +159,21 @@ export default function SignInPage() {
                 </Link>
               </div>
               <Input
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 placeholder="Enter password"
                 leftIcon={<Lock className="w-4 h-4" />}
+                rightIcon={
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    className="hover:text-ink transition-colors focus:outline-none"
+                  >
+                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  </button>
+                }
                 required
               />
             </div>
@@ -159,6 +184,7 @@ export default function SignInPage() {
               size="lg"
               className="w-full mt-2"
               loading={loading}
+              disabled={loading}
               icon={<ArrowRight className="w-4 h-4" />}
               iconPosition="right"
             >
@@ -174,44 +200,54 @@ export default function SignInPage() {
           </div>
         </div>
 
-        {/* Quick Demo Login Preset Switcher */}
-        <div className="bg-surface p-6 rounded-card border border-line space-y-3">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-ink-muted flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-brand" />
-              Demo Quick Login Presets
-            </span>
-            <Badge variant="neutral" size="sm">Prototype Aid</Badge>
-          </div>
-          <p className="text-[11px] text-ink-muted leading-tight">
-            Select a sample member profile to test the application in offline simulation mode:
-          </p>
+        {/* Demo Login Presets (shown in unconfigured / mock mode) */}
+        {backendStatus !== 'connected' && (
+          <div className="bg-surface p-6 rounded-card border border-line space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-ink-muted flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-brand" />
+                Demo Quick Login Presets
+              </span>
+              <Badge variant="neutral" size="sm">Prototype Aid</Badge>
+            </div>
+            <p className="text-[11px] text-ink-muted leading-tight">
+              Select a sample member profile to test the application in offline simulation mode:
+            </p>
 
-          <div className="grid grid-cols-1 gap-2 pt-1">
-            {members.slice(0, 3).map(m => (
-              <button
-                key={m.id}
-                type="button"
-                onClick={() => handleQuickLogin(m.id)}
-                className="flex items-center justify-between p-2.5 rounded-xl border border-line hover:border-brand/40 hover:bg-surface-subtle transition-all text-left group"
-              >
-                <div className="flex items-center gap-3">
-                  <Avatar src={m.avatar} name={m.name} size="sm" />
-                  <div>
-                    <div className="text-xs font-bold text-ink group-hover:text-brand transition-colors">
-                      {m.name}
-                    </div>
-                    <div className="text-[11px] text-ink-muted line-clamp-1">
-                      {m.headline}
+            <div className="grid grid-cols-1 gap-2 pt-1">
+              {members.slice(0, 3).map(m => (
+                <button
+                  key={m.id}
+                  type="button"
+                  onClick={() => handleQuickLogin(m.id)}
+                  className="flex items-center justify-between p-2.5 rounded-xl border border-line hover:border-brand/40 hover:bg-surface-subtle transition-all text-left group"
+                >
+                  <div className="flex items-center gap-3">
+                    <Avatar src={m.avatar} name={m.name} size="sm" />
+                    <div>
+                      <div className="text-xs font-bold text-ink group-hover:text-brand transition-colors">
+                        {m.name}
+                      </div>
+                      <div className="text-[11px] text-ink-muted line-clamp-1">
+                        {m.headline}
+                      </div>
                     </div>
                   </div>
-                </div>
-                <UserCheck className="w-4 h-4 text-ink-muted group-hover:text-brand transition-colors" />
-              </button>
-            ))}
+                  <UserCheck className="w-4 h-4 text-ink-muted group-hover:text-brand transition-colors" />
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
+  );
+}
+
+export default function SignInPage() {
+  return (
+    <Suspense fallback={<div className="min-h-[80vh] flex items-center justify-center">Loading...</div>}>
+      <SignInContent />
+    </Suspense>
   );
 }

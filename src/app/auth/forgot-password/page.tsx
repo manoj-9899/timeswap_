@@ -95,6 +95,7 @@ export default function ForgotPasswordPage() {
                 size="lg"
                 className="w-full mt-2"
                 loading={loading}
+                disabled={loading}
               >
                 Send Password Reset Instructions
               </Button>

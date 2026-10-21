@@ -97,20 +97,20 @@ export default function DiscoverPage() {
   const isFiltered = query.trim() !== '' || selectedCategory !== 'All' || selectedProficiency !== 'All';
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 space-y-5 sm:space-y-8">
       {/* Header bar */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-line">
-        <div className="space-y-1.5">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 sm:pb-6 border-b border-line">
+        <div className="space-y-1">
           <div className="flex items-center gap-2">
             <Compass className="w-4 h-4 text-brand" />
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-deep">
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-deep">
               Global Skill Directory
             </span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-ink font-editorial tracking-tight">
+          <h1 className="text-2xl sm:text-4xl font-extrabold text-ink font-editorial tracking-tight">
             Discover Mentors & Skills
           </h1>
-          <p className="text-sm text-ink-muted">
+          <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
             Connect with {members.length - 1} practitioners offering verified 1-on-1 exchanges for 1.0 time credit per hour.
           </p>
         </div>
@@ -127,7 +127,7 @@ export default function DiscoverPage() {
                 <button
                   aria-label="Clear search query"
                   onClick={() => setQuery('')}
-                  className="hover:text-ink"
+                  className="hover:text-ink touch-target flex items-center justify-center"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -138,14 +138,14 @@ export default function DiscoverPage() {
       </div>
 
       {/* Categories & Filter Bar */}
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {/* Horizontal Category Chips */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 -mx-3 px-3 sm:mx-0 sm:px-0 no-scrollbar">
           {categories.map(cat => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all select-none ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all select-none touch-target ${
                 selectedCategory === cat
                   ? 'bg-brand text-white shadow-subtle'
                   : 'bg-surface border border-line text-ink-muted hover:text-ink hover:bg-surface-subtle'
@@ -157,8 +157,8 @@ export default function DiscoverPage() {
         </div>
 
         {/* Secondary Filter Controls */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-1">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
+          <div className="flex items-center gap-2 sm:gap-3">
             <span className="text-xs text-ink-muted font-medium">
               Showing <strong className="text-ink">{filteredMembers.length}</strong> mentors
             </span>
@@ -173,15 +173,15 @@ export default function DiscoverPage() {
             )}
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {/* Proficiency Filter */}
-            <div className="flex items-center gap-2 text-xs">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-xs">
               <span className="text-ink-muted hidden sm:inline">Proficiency:</span>
               <select
                 aria-label="Filter mentors by proficiency"
                 value={selectedProficiency}
                 onChange={e => setSelectedProficiency(e.target.value)}
-                className="bg-surface text-ink text-xs font-medium rounded-lg border border-line px-2.5 py-1.5 focus:border-brand focus:outline-none"
+                className="bg-surface text-ink text-xs font-medium rounded-lg border border-line px-2 sm:px-2.5 py-1.5 focus:border-brand focus:outline-none min-h-[36px]"
               >
                 <option value="All">All Levels</option>
                 <option value="Intermediate">Intermediate</option>
@@ -191,16 +191,16 @@ export default function DiscoverPage() {
             </div>
 
             {/* Sort Select */}
-            <div className="flex items-center gap-2 text-xs">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-xs">
               <span className="text-ink-muted hidden sm:inline">Sort:</span>
               <select
                 aria-label="Sort mentors by criteria"
                 value={selectedSort}
                 onChange={e => setSelectedSort(e.target.value as any)}
-                className="bg-surface text-ink text-xs font-medium rounded-lg border border-line px-2.5 py-1.5 focus:border-brand focus:outline-none"
+                className="bg-surface text-ink text-xs font-medium rounded-lg border border-line px-2 sm:px-2.5 py-1.5 focus:border-brand focus:outline-none min-h-[36px]"
               >
                 <option value="rating">Highest Rated</option>
-                <option value="hours">Most Hours Taught</option>
+                <option value="hours">Most Hours</option>
                 <option value="reviews">Most Reviews</option>
               </select>
             </div>
@@ -309,11 +309,11 @@ export default function DiscoverPage() {
               </div>
 
               {/* Card Footer Actions */}
-              <div className="pt-3 border-t border-line flex items-center justify-between">
+              <div className="pt-3 border-t border-line flex items-center justify-between gap-2">
                 <div className="text-[11px] text-ink-muted">
                   <span className="font-semibold text-ink">{member.hoursTaught}h</span> taught • {member.reviewCount} reviews
                 </div>
-                <Link href={`/members/${member.id}`}>
+                <Link href={`/members/${member.id}`} className="flex-shrink-0">
                   <Button variant="soft" size="sm" icon={<ArrowRight className="w-3.5 h-3.5" />} iconPosition="right">
                     View & Book
                   </Button>

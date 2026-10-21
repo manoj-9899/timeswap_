@@ -4,9 +4,9 @@ import { Heart, Compass, Shield, Clock } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="bg-surface-subtle border-t border-line mt-20 pt-16 pb-12 transition-colors">
+    <footer className="bg-surface-subtle border-t border-line mt-10 sm:mt-20 pt-10 sm:pt-16 pb-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-line">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 sm:gap-10 pb-8 sm:pb-12 border-b border-line">
           {/* Brand Col */}
           <div className="md:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2.5 select-none">
@@ -23,7 +23,7 @@ export function Footer() {
             <p className="text-sm text-ink-muted leading-relaxed max-w-sm">
               A peer-to-peer reciprocal skill exchange founded on the principle that human curiosity has no price tag. One hour taught unlocks one hour learned.
             </p>
-            <div className="flex items-center gap-3 text-xs text-brand-deep font-semibold pt-1">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-brand-deep font-semibold pt-1">
               <span className="inline-flex items-center gap-1 bg-brand-soft px-2.5 py-1 rounded-pill border border-brand/20">
                 <Clock className="w-3.5 h-3.5" /> 100% Non-Monetary
               </span>
@@ -70,9 +70,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ink-muted">
+        <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ink-muted text-center sm:text-left">
           <p>© 2026 TimeSwap Community. Designed with care for human craft and curiosity.</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
             <span>Refined Light Theme Only</span>
             <span className="w-1 h-1 rounded-full bg-ink-muted/40" />
             <span>Zero Platform Fees</span>

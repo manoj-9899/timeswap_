@@ -24,7 +24,7 @@ export function EquilibriumDial() {
   };
 
   return (
-    <div className="relative bg-surface rounded-modal border border-line shadow-elevated p-6 sm:p-8 overflow-hidden max-w-xl mx-auto">
+    <div className="relative bg-surface rounded-modal border border-line shadow-elevated p-4 sm:p-8 overflow-hidden max-w-xl mx-auto">
       {/* Background ambient daylight ring */}
       <div className="absolute -top-24 -right-24 w-64 h-64 bg-brand-soft/60 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-accent-peach/30 rounded-full blur-3xl pointer-events-none" />

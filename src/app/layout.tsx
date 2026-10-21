@@ -4,6 +4,7 @@ import './globals.css';
 import { TimeSwapProvider } from '../lib/store';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
+import { MobileNav } from '../components/MobileNav';
 import { ServiceWorkerRegister } from '../components/ServiceWorkerRegister';
 
 const appBaseUrl = process.env.NEXT_PUBLIC_APP_URL 
@@ -82,10 +83,11 @@ export default function RootLayout({
         </a>
         <TimeSwapProvider>
           <Navbar />
-          <main id="main-content" className="flex-1">
+          <main id="main-content" className="flex-1 content-bottom-nav-spacer md:pb-0">
             {children}
           </main>
           <Footer />
+          <MobileNav />
           <ServiceWorkerRegister />
         </TimeSwapProvider>
       </body>

@@ -59,7 +59,7 @@ export default function LandingPage() {
     },
     {
       q: 'How do session durations convert to credits?',
-      a: 'We use a straightforward, predictable conversion: 30 minutes = 0.5 credit, 60 minutes = 1.0 credit, and 90 minutes = 1.5 credits. All new members receive a 2.0 credit community grant to get started immediately.'
+      a: 'We use a straightforward, predictable conversion: 60 minutes = 1.0 time credit. All new members receive 3 welcome credits to begin learning immediately before offering their first skill.'
     },
     {
       q: 'What if I am a beginner and don’t know what to teach?',
@@ -68,57 +68,57 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="space-y-28 md:space-y-36">
+    <div className="space-y-12 sm:space-y-20 md:space-y-36">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-12 pb-8 sm:pt-20 sm:pb-16 overflow-hidden">
+      <section className="relative pt-8 pb-6 sm:pt-20 sm:pb-16 overflow-hidden">
         {/* Subtle geometric grid background */}
         <div className="absolute inset-0 bg-[radial-gradient(#E6E7DF_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
             {/* Left Narrative Column */}
-            <div className="lg:col-span-7 space-y-6 text-left">
+            <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
               {/* Pill Tag */}
               <div className="inline-flex items-center gap-2 bg-brand-soft/80 border border-brand/20 px-3.5 py-1.5 rounded-pill shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-brand animate-pulse-subtle" />
-                <span className="text-xs font-semibold text-brand-deep tracking-wide uppercase">
+                <span className="text-[10px] sm:text-xs font-semibold text-brand-deep tracking-wide uppercase">
                   Peer-to-Peer Reciprocal Exchange
                 </span>
               </div>
 
               {/* Editorial Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink font-editorial tracking-tight leading-[1.08]">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-ink font-editorial tracking-tight leading-[1.08]">
                 Your time is worth more when you <span className="text-brand italic font-normal">share it</span>.
               </h1>
 
               {/* Sub-copy */}
-              <p className="text-lg sm:text-xl text-ink-muted leading-relaxed max-w-xl">
+              <p className="text-base sm:text-xl text-ink-muted leading-relaxed max-w-xl">
                 Teach what you know for one hour to earn one time credit. Spend those credits learning directly from makers, linguists, coders, and artisans. Zero money. Pure community reciprocity.
               </p>
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-3.5">
-                <Button href="/auth/signup" variant="primary" size="lg" icon={<ArrowRight className="w-4 h-4" />} iconPosition="right">
+              <div className="pt-2 flex flex-col xs:flex-row items-stretch xs:items-center gap-3">
+                <Button href="/auth/signup" variant="primary" size="lg" icon={<ArrowRight className="w-4 h-4" />} iconPosition="right" className="w-full xs:w-auto">
                   Start Swapping Free
                 </Button>
-                <Button href="/discover" variant="secondary" size="lg" icon={<Compass className="w-4 h-4" />}>
+                <Button href="/discover" variant="secondary" size="lg" icon={<Compass className="w-4 h-4" />} className="w-full xs:w-auto">
                   Explore 120+ Skills
                 </Button>
               </div>
 
               {/* Trust & Proof Indicators */}
-              <div className="pt-6 border-t border-line grid grid-cols-3 gap-4 max-w-lg">
+              <div className="pt-5 sm:pt-6 border-t border-line grid grid-cols-3 gap-2 sm:gap-4 max-w-lg">
                 <div>
-                  <div className="text-2xl font-extrabold text-ink font-editorial">1h = 1 Credit</div>
-                  <div className="text-xs text-ink-muted mt-0.5">Equal human attention</div>
+                  <div className="text-lg sm:text-2xl font-extrabold text-ink font-editorial">1h = 1 Credit</div>
+                  <div className="text-[10px] sm:text-xs text-ink-muted mt-0.5">Equal human attention</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-extrabold text-brand font-editorial">2-Way Lock</div>
-                  <div className="text-xs text-ink-muted mt-0.5">Mutual confirmation</div>
+                  <div className="text-lg sm:text-2xl font-extrabold text-brand font-editorial">2-Way Lock</div>
+                  <div className="text-[10px] sm:text-xs text-ink-muted mt-0.5">Mutual confirmation</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-extrabold text-ink font-editorial">$0 Always</div>
-                  <div className="text-xs text-ink-muted mt-0.5">Non-monetary ledger</div>
+                  <div className="text-lg sm:text-2xl font-extrabold text-ink font-editorial">$0 Always</div>
+                  <div className="text-[10px] sm:text-xs text-ink-muted mt-0.5">Non-monetary ledger</div>
                 </div>
               </div>
             </div>

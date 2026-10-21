@@ -33,7 +33,7 @@ function MessagesContent() {
 
   const { conversations, currentUser, sendMessage, markConversationRead } = useTimeSwap();
   const [activeConvId, setActiveConvId] = useState<string>(
-    selectedConvId || conversations[0]?.id || ''
+    selectedConvId || ''
   );
   const [query, setQuery] = useState('');
   const [text, setText] = useState('');
@@ -45,10 +45,10 @@ function MessagesContent() {
   useEffect(() => {
     if (selectedConvId) {
       setActiveConvId(selectedConvId);
-    } else if (!activeConvId && conversations.length > 0) {
-      setActiveConvId(conversations[0].id);
+    } else if (typeof window !== 'undefined' && window.innerWidth >= 768 && conversations.length > 0) {
+      setActiveConvId(prev => prev || conversations[0].id);
     }
-  }, [selectedConvId]);
+  }, [selectedConvId, conversations]);
 
   // Mark active conversation read when activeConvId changes
   useEffect(() => {
@@ -140,11 +140,11 @@ function MessagesContent() {
   };
 
   return (
-    <div className="bg-surface rounded-modal border border-line shadow-elevated overflow-hidden min-h-[640px] grid grid-cols-1 md:grid-cols-12">
+    <div className="bg-surface rounded-modal border border-line shadow-elevated overflow-hidden min-h-[520px] md:min-h-[640px] h-[calc(100dvh-11rem)] md:h-[680px] grid grid-cols-1 md:grid-cols-12">
         {/* Left: Conversation List (4 cols) */}
-        <div className={`md:col-span-5 border-r border-line flex flex-col ${activeConvId ? 'hidden md:flex' : 'flex'}`}>
+        <div className={`md:col-span-5 border-r border-line flex flex-col h-full ${activeConvId ? 'hidden md:flex' : 'flex'}`}>
           {/* Header */}
-          <div className="p-4 border-b border-line space-y-3">
+          <div className="p-3.5 sm:p-4 border-b border-line space-y-3">
             <div className="flex items-center justify-between">
               <h2 className="font-bold text-lg text-ink font-editorial">Conversations</h2>
               <Badge variant="neutral" size="sm">{conversations.length}</Badge>
@@ -170,7 +170,7 @@ function MessagesContent() {
                   <button
                     key={c.id}
                     onClick={() => setActiveConvId(c.id)}
-                    className={`w-full p-4 text-left flex items-start gap-3 transition-colors ${
+                    className={`w-full p-3.5 sm:p-4 text-left flex items-start gap-3 transition-colors touch-target ${
                       isSelected
                         ? 'bg-surface-subtle font-semibold'
                         : 'hover:bg-surface-subtle/50'
@@ -195,20 +195,20 @@ function MessagesContent() {
         </div>
 
         {/* Right: Active Chat Thread (7 cols) */}
-        <div className={`md:col-span-7 flex flex-col h-[640px] ${!activeConvId ? 'hidden md:flex' : 'flex'}`}>
+        <div className={`md:col-span-7 flex flex-col h-full ${!activeConvId ? 'hidden md:flex' : 'flex'}`}>
           {activeConversation ? (
             <>
               {/* Header */}
-              <div className="p-4 border-b border-line flex items-center justify-between gap-3 bg-canvas/40">
-                <div className="flex items-center gap-3">
+              <div className="p-3 sm:p-4 border-b border-line flex items-center justify-between gap-2 sm:gap-3 bg-canvas/40">
+                <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
                   <button
                     aria-label="Back to conversations list"
                     onClick={() => setActiveConvId('')}
-                    className="md:hidden p-1 text-ink-muted hover:text-ink"
+                    className="md:hidden p-1.5 rounded-lg text-ink-muted hover:text-ink touch-target flex items-center justify-center flex-shrink-0"
                   >
                     <ArrowLeft className="w-5 h-5" />
                   </button>
-                  <div className="relative">
+                  <div className="relative flex-shrink-0">
                     <Avatar
                       src={activeConversation.participantAvatar}
                       name={activeConversation.participantName}
@@ -222,25 +222,26 @@ function MessagesContent() {
                       />
                     )}
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <h2 className="text-xs font-bold text-ink">{activeConversation.participantName}</h2>
+                      <h2 className="text-xs font-bold text-ink truncate">{activeConversation.participantName}</h2>
                       {activePeerOnline ? (
-                        <span className="flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 text-[10px] font-medium border border-emerald-500/20">
+                        <span className="flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 text-[10px] font-medium border border-emerald-500/20 flex-shrink-0">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                           Online
                         </span>
                       ) : (
-                        <span className="text-[10px] text-ink-muted">Offline</span>
+                        <span className="text-[10px] text-ink-muted flex-shrink-0">Offline</span>
                       )}
                     </div>
-                    <p className="text-[11px] text-ink-muted truncate max-w-xs">{activeConversation.participantHeadline}</p>
+                    <p className="text-[11px] text-ink-muted truncate max-w-[150px] xs:max-w-xs">{activeConversation.participantHeadline}</p>
                   </div>
                 </div>
 
-                <Link href={`/members/${activeConversation.participantId}`}>
+                <Link href={`/members/${activeConversation.participantId}`} className="flex-shrink-0">
                   <Button variant="outline" size="sm">
-                    View Profile
+                    <span className="hidden xs:inline">View Profile</span>
+                    <span className="xs:hidden">Profile</span>
                   </Button>
                 </Link>
               </div>
@@ -356,7 +357,7 @@ function MessagesContent() {
 
 export default function MessagesPage() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-8">
       <h1 className="sr-only">TimeSwap Direct Messenger</h1>
       <Suspense fallback={
         <div className="py-16 text-center text-xs text-ink-muted">

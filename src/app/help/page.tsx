@@ -69,16 +69,16 @@ export default function HelpPage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+    <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 space-y-6 sm:space-y-10">
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
         <div className="w-12 h-12 mx-auto rounded-2xl bg-brand-soft border border-brand/20 flex items-center justify-center text-brand">
           <HelpCircle className="w-6 h-6 text-brand" />
         </div>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-ink font-editorial tracking-tight">
+        <h1 className="text-2xl sm:text-4xl font-extrabold text-ink font-editorial tracking-tight">
           Help Center & Reciprocal Guidelines
         </h1>
-        <p className="text-sm text-ink-muted leading-relaxed">
+        <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
           Search answers about the credit escrow, two-way confirmation protocol, and community standards.
         </p>
 
@@ -93,12 +93,12 @@ export default function HelpPage() {
       </div>
 
       {/* Quick Topic Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="p-5 bg-surface rounded-card border border-line shadow-subtle space-y-2">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+        <div className="p-4 sm:p-5 bg-surface rounded-card border border-line shadow-subtle space-y-2">
           <Clock className="w-5 h-5 text-brand" />
           <h2 className="text-sm font-bold text-ink">Time Credit Math</h2>
           <p className="text-xs text-ink-muted leading-relaxed">
-            30m = 0.5 credit, 60m = 1.0 credit, 90m = 1.5 credits. No surge pricing, no platform cuts.
+            1 hour = 1.0 credit. Predictable, non-monetary, with 3 welcome credits for all new members.
           </p>
         </div>
 

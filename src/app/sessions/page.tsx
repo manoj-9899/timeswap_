@@ -49,26 +49,26 @@ export default function SessionsPage() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-5 sm:py-8 space-y-5 sm:space-y-8">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-line">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 sm:pb-6 border-b border-line">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
             <Calendar className="w-4 h-4 text-brand" />
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-deep">
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-deep">
               Exchange Management
             </span>
           </div>
-          <h1 className="text-3xl font-extrabold text-ink font-editorial tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-ink font-editorial tracking-tight">
             My Exchanges & Sessions
           </h1>
-          <p className="text-sm text-ink-muted">
+          <p className="text-xs sm:text-sm text-ink-muted">
             Track scheduled mentorships, pending requests, and finalize two-way credit transfers.
           </p>
         </div>
 
-        <Link href="/discover">
-          <Button variant="primary" icon={<ArrowRight className="w-4 h-4" />} iconPosition="right">
+        <Link href="/discover" className="w-full sm:w-auto">
+          <Button variant="primary" icon={<ArrowRight className="w-4 h-4" />} iconPosition="right" className="w-full sm:w-auto">
             Request New Exchange
           </Button>
         </Link>
@@ -114,14 +114,15 @@ export default function SessionsPage() {
             return (
               <div
                 key={session.id}
-                className="bg-surface rounded-card p-6 border border-line shadow-subtle hover:shadow-elevated transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-6"
+                className="bg-surface rounded-card p-4 sm:p-6 border border-line shadow-subtle hover:shadow-elevated transition-all flex flex-col lg:flex-row lg:items-center justify-between gap-4 sm:gap-6"
               >
                 {/* Details */}
-                <div className="flex items-start gap-4">
-                  <Avatar src={counterpartyAvatar} name={counterpartyName} size="lg" />
-                  <div className="space-y-1.5">
+                <div className="flex items-start gap-3 sm:gap-4 min-w-0">
+                  <Avatar src={counterpartyAvatar} name={counterpartyName} size="md" className="sm:hidden flex-shrink-0" />
+                  <Avatar src={counterpartyAvatar} name={counterpartyName} size="lg" className="hidden sm:inline-flex flex-shrink-0" />
+                  <div className="space-y-1.5 min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className="font-bold text-base text-ink">{session.skillTitle}</span>
+                      <span className="font-bold text-sm sm:text-base text-ink">{session.skillTitle}</span>
                       <CreditPill amount={session.creditCost} type="cost" size="sm" />
                       <Badge
                         variant={
@@ -151,7 +152,7 @@ export default function SessionsPage() {
                     </p>
 
                     {/* 2-Way Confirmation Status Indicator */}
-                    <div className="flex items-center gap-4 text-[11px] pt-1">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[11px] pt-1">
                       <span className="flex items-center gap-1">
                         Teacher: {session.teacherConfirmed ? (
                           <span className="text-brand font-semibold flex items-center gap-0.5"><CheckCircle2 className="w-3 h-3" /> Signed off</span>
@@ -172,7 +173,7 @@ export default function SessionsPage() {
                 </div>
 
                 {/* Right Action buttons */}
-                <div className="flex flex-wrap items-center gap-2.5 self-end lg:self-center">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 w-full lg:w-auto justify-start lg:justify-end pt-2 sm:pt-0 border-t border-line lg:border-0">
                   {/* Join room if accepted/upcoming/in_progress */}
                   {(session.status === 'accepted' || session.status === 'upcoming' || session.status === 'in_progress') && (
                     <a
@@ -251,11 +252,11 @@ export default function SessionsPage() {
             </div>
           )}
 
-          <div className="flex items-center justify-end gap-3 pt-3 border-t border-line">
-            <Button variant="outline" onClick={() => setCancelModalSession(null)}>
+          <div className="flex flex-col-reverse sm:flex-row sm:items-center justify-end gap-2.5 sm:gap-3 pt-3 border-t border-line">
+            <Button variant="outline" onClick={() => setCancelModalSession(null)} className="w-full sm:w-auto">
               Keep Session
             </Button>
-            <Button variant="danger" onClick={handleConfirmCancel}>
+            <Button variant="danger" onClick={handleConfirmCancel} className="w-full sm:w-auto">
               Confirm Cancellation
             </Button>
           </div>

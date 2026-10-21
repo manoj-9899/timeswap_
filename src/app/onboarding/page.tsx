@@ -39,11 +39,11 @@ export default function OnboardingPage() {
   const [isSyncing, setIsSyncing] = useState(false);
 
   // Form states
-  const [name, setName] = useState(currentUser.name || 'Ana Silva');
-  const [headline, setHeadline] = useState(currentUser.headline || 'Product Designer & Botanical Watercolorist');
-  const [bio, setBio] = useState(currentUser.bio || 'Building intuitive digital platforms with clean typographic hierarchy. Dedicated to exchanging craft with lifelong learners.');
-  const [location, setLocation] = useState(currentUser.location || 'Lisbon, Portugal');
-  const [timezone, setTimezone] = useState(currentUser.timezone || 'WET (UTC+0)');
+  const [name, setName] = useState(currentUser.name || '');
+  const [headline, setHeadline] = useState(currentUser.headline || '');
+  const [bio, setBio] = useState(currentUser.bio || '');
+  const [location, setLocation] = useState(currentUser.location || '');
+  const [timezone, setTimezone] = useState(currentUser.timezone || 'UTC');
   const [avatar, setAvatar] = useState(currentUser.avatar || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80');
 
   // Teaching skills

@@ -121,13 +121,14 @@ export default function MemberProfilePage() {
       </Link>
 
       {/* Main Profile Header Card */}
-      <div className="bg-surface rounded-modal border border-line shadow-elevated p-6 sm:p-10 space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 pb-6 border-b border-line">
-          <div className="flex items-start gap-5">
-            <Avatar src={member.avatar} name={member.name} size="xl" verified />
-            <div className="space-y-1.5">
-              <div className="flex items-center gap-2.5">
-                <h1 className="text-2xl sm:text-3xl font-extrabold text-ink font-editorial tracking-tight">
+      <div className="bg-surface rounded-modal border border-line shadow-elevated p-4 sm:p-10 space-y-5 sm:space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-5 sm:gap-6 pb-5 sm:pb-6 border-b border-line">
+          <div className="flex items-start gap-3.5 sm:gap-5">
+            <Avatar src={member.avatar} name={member.name} size="lg" className="sm:hidden flex-shrink-0" verified />
+            <Avatar src={member.avatar} name={member.name} size="xl" className="hidden sm:inline-flex flex-shrink-0" verified />
+            <div className="space-y-1.5 min-w-0">
+              <div className="flex flex-wrap items-center gap-2">
+                <h1 className="text-xl sm:text-3xl font-extrabold text-ink font-editorial tracking-tight truncate">
                   {member.name}
                 </h1>
                 <div className="flex items-center gap-1 text-xs font-bold text-brand-deep bg-brand-soft px-2.5 py-0.5 rounded-pill border border-brand/20">
@@ -137,11 +138,11 @@ export default function MemberProfilePage() {
                 </div>
               </div>
 
-              <p className="text-sm font-semibold text-ink leading-snug">
+              <p className="text-xs sm:text-sm font-semibold text-ink leading-snug">
                 {member.headline}
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 text-xs text-ink-muted pt-1">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-ink-muted pt-1">
                 <span className="flex items-center gap-1">
                   <MapPin className="w-3.5 h-3.5 text-brand" /> {member.location}
                 </span>
@@ -149,18 +150,18 @@ export default function MemberProfilePage() {
                 <span className="flex items-center gap-1">
                   <Globe className="w-3.5 h-3.5 text-brand" /> {member.timezone}
                 </span>
-                <span>•</span>
-                <span>Joined {member.joinedDate}</span>
+                <span className="hidden xs:inline">•</span>
+                <span className="hidden xs:inline">Joined {member.joinedDate}</span>
               </div>
             </div>
           </div>
 
           {/* Action CTAs */}
-          <div className="flex items-center gap-2.5 self-start sm:self-auto">
+          <div className="grid grid-cols-5 sm:flex sm:items-center gap-2 sm:gap-2.5 w-full sm:w-auto">
             <button
               aria-label={member.isSaved ? `Remove ${member.name} from bookmarks` : `Bookmark ${member.name}`}
               onClick={() => toggleSaveMember(member.id)}
-              className={`p-2.5 rounded-xl border transition-colors ${
+              className={`col-span-1 p-2 sm:p-2.5 rounded-xl border transition-colors flex items-center justify-center touch-target ${
                 member.isSaved
                   ? 'bg-brand-soft text-brand-deep border-brand/30'
                   : 'bg-surface text-ink-muted border-line hover:text-ink'
@@ -174,6 +175,7 @@ export default function MemberProfilePage() {
               variant="secondary"
               onClick={handleStartMessage}
               icon={<MessageSquare className="w-4 h-4" />}
+              className="col-span-2 sm:col-auto"
             >
               Message
             </Button>
@@ -182,8 +184,10 @@ export default function MemberProfilePage() {
               variant="primary"
               onClick={() => handleOpenBooking()}
               icon={<Sparkles className="w-4 h-4" />}
+              className="col-span-2 sm:col-auto"
             >
-              Request Exchange
+              <span className="sm:hidden">Request</span>
+              <span className="hidden sm:inline">Request Exchange</span>
             </Button>
           </div>
         </div>
@@ -228,10 +232,10 @@ export default function MemberProfilePage() {
                   key={skill.id}
                   className="p-5 rounded-2xl bg-surface-subtle border border-line space-y-3 transition-all hover:bg-white hover:shadow-xs"
                 >
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
                     <div>
                       <h3 className="font-bold text-base text-ink">{skill.name}</h3>
-                      <div className="flex items-center gap-2 mt-1">
+                      <div className="flex flex-wrap items-center gap-2 mt-1">
                         <Badge variant="neutral" size="sm">{skill.category}</Badge>
                         <Badge variant="brand" size="sm">{skill.proficiency}</Badge>
                       </div>
@@ -241,6 +245,7 @@ export default function MemberProfilePage() {
                       variant="primary"
                       size="sm"
                       onClick={() => handleOpenBooking(skill)}
+                      className="w-full sm:w-auto"
                     >
                       Book This Skill
                     </Button>
@@ -516,6 +521,27 @@ export default function MemberProfilePage() {
           </div>
         </form>
       </Modal>
+      {/* Mobile Sticky Booking Bar */}
+      <aside
+        aria-label="Mobile quick book action"
+        className="md:hidden fixed bottom-[calc(4rem+env(safe-area-inset-bottom,0px))] left-0 right-0 z-30 bg-surface/95 backdrop-blur-md border-t border-line px-4 py-2.5 shadow-float flex items-center justify-between gap-3"
+      >
+        <div className="flex flex-col min-w-0">
+          <span className="text-[10px] uppercase tracking-wider font-bold text-ink-muted">Ready to learn?</span>
+          <span className="text-xs font-bold text-ink truncate">
+            {selectedSkill?.name || member.skillsTeaching[0]?.name || 'Skill Exchange'}
+          </span>
+        </div>
+        <Button
+          variant="primary"
+          size="sm"
+          onClick={() => handleOpenBooking()}
+          icon={<Sparkles className="w-3.5 h-3.5" />}
+          className="whitespace-nowrap flex-shrink-0"
+        >
+          Request Exchange
+        </Button>
+      </aside>
     </div>
   );
 }

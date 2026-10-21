@@ -583,6 +583,44 @@ export const INITIAL_CURRENT_USER: CurrentUser = {
   onboardingStep: 6
 };
 
+export const EMPTY_CURRENT_USER: CurrentUser = {
+  id: '',
+  name: '',
+  handle: '',
+  email: '',
+  avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80',
+  headline: '',
+  bio: '',
+  location: '',
+  timezone: 'UTC',
+  rating: 5.0,
+  reviewCount: 0,
+  hoursTaught: 0,
+  hoursLearned: 0,
+  availableCredits: 0,
+  pendingCredits: 0,
+  lifetimeCreditsEarned: 0,
+  lifetimeCreditsSpent: 0,
+  skillsTeaching: [],
+  skillsLearning: [],
+  availability: {
+    days: ['Monday', 'Wednesday'],
+    timeSlot: '18:00 to 21:00 UTC',
+    preferredCadence: 'Weekly 60m exchanges',
+  },
+  joinedDate: 'Just now',
+  badges: ['New Member'],
+  reviews: [],
+  notificationPreferences: {
+    emailAlerts: true,
+    sessionReminders: true,
+    creditUpdates: true,
+    communityDigest: false,
+  },
+  onboardingCompleted: false,
+  onboardingStep: 1,
+};
+
 export const INITIAL_SESSIONS: Session[] = [
   {
     id: 'sess-1',

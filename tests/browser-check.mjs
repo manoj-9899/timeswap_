@@ -90,8 +90,17 @@ async function runBrowserAudit() {
     await page.goto('http://localhost:3000/messages', { waitUntil: 'networkidle' });
     await page.waitForTimeout(500);
 
-    // Find input and send button
-    const input = page.locator('input[placeholder*="Type a message"]');
+    // If no active thread selected, select the first conversation from list
+    let input = page.locator('input[placeholder*="Type a message"]');
+    if (await input.count() === 0) {
+      const convButton = page.locator('div[class*="overflow-y-auto"] button').first();
+      if (await convButton.count() > 0) {
+        await convButton.click();
+        await page.waitForTimeout(300);
+      }
+      input = page.locator('input[placeholder*="Type a message"]');
+    }
+
     if (await input.count() > 0) {
       await input.fill('Automated Browser Test Message: Hello from Playwright!');
       await page.waitForTimeout(200);

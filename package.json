@@ -15,8 +15,9 @@
     "test:phase5a": "node tests/test-phase5a.mjs",
     "test:maintenance": "node tests/test-scheduled-maintenance.mjs",
     "test:pwa": "node tests/test-pwa.mjs",
+    "test:auth": "node tests/test-auth-hardening.mjs",
     "test:browser": "node tests/browser-check.mjs",
-    "test": "node tests/test-db-phase1.mjs && node tests/test-phase2.mjs && node tests/test-phase3.mjs && node tests/test-phase4.mjs && node tests/test-phase5a.mjs && node tests/test-scheduled-maintenance.mjs && node tests/test-pwa.mjs"
+    "test": "node tests/test-db-phase1.mjs && node tests/test-phase2.mjs && node tests/test-phase3.mjs && node tests/test-phase4.mjs && node tests/test-phase5a.mjs && node tests/test-scheduled-maintenance.mjs && node tests/test-pwa.mjs && node tests/test-auth-hardening.mjs"
   },
   "keywords": [],
   "author": "",
